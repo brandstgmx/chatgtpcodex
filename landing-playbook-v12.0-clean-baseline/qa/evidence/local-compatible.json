@@ -1,0 +1,98 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": true,
+    "errors": []
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": true,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": false,
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": false,
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": false,
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "pass": true,
+    "origin": "null",
+    "storageBlocked": true,
+    "ticks": true,
+    "spinning": true,
+    "final": "179",
+    "sticky": false,
+    "errors": []
+  }
+]

@@ -16,7 +16,7 @@ El modo `prefers-reduced-motion` evita ahora el retraso del reveal del hero y el
 - Consolidación de declaraciones reemplazadas, shorthands y reglas incondicionales. Ningún selector incondicional se repite dentro de su archivo de componente. Las variantes responsive, hover, estado y reduced motion permanecen explícitas.
 - Eliminación de selectores históricos sin consumidores, keyframes sin uso y capas de shine/perímetro permanentemente desactivadas. Se retiró el span invisible `purchase-shine` y la regla `:first-child` que sólo lo estilaba.
 - CSS: 155,976 → 95,772 bytes, reducción de 38.6 %. Se conservan 13 keyframes utilizados por la experiencia.
-- JS dividido en módulos ES nativos, con estado privado e inicialización idempotente. Se mantiene la API pública de tracking, consentimiento, tab attention y purchase.
+- Fuentes JS divididos en módulos por componente, con estado privado e inicialización idempotente. `js/bootstrap.js` se compila al script clásico `js/app.js`, que viene generado y listo para usar en el ZIP. Se mantiene la API pública de tracking, consentimiento, tab attention y purchase.
 - Un solo listener delegado registra los CTAs y checkout. Se eliminó el doble registro publicitario/analítico del clic.
 - Countdown con una única expiración absoluta de 300 000 ms, un único intervalo activo y sincronización de timestamps entre pestañas mediante `storage`. La expiración nunca se extiende ni se reinicia automáticamente.
 - Fallback de storage protegido frente a errores de lectura/escritura; estado en memoria encapsulado cuando no hay storage disponible. Pulse únicamente al cambiar el segundo.
@@ -31,6 +31,12 @@ El modo `prefers-reduced-motion` evita ahora el retraso del reveal del hero y el
 
 ## Archivos conservados
 
-`img/*`, `robots.txt` y `sitemap.xml` son idénticos byte por byte al handoff. El HTML sólo cambia la carga del script a ES module y retira el span sin contenido que siempre estaba oculto.
+`img/*`, `robots.txt` y `sitemap.xml` son idénticos byte por byte al handoff. El HTML conserva la carga clásica con `defer`, como V11.45/V11.46, y sólo retira el span sin contenido que siempre estaba oculto.
 
 No se agregaron funcionalidades al producto. No se publicó ni se configuraron servicios comerciales externos.
+
+## Corrección posterior — animaciones al abrir el ZIP
+
+La primera entrega cambió la carga a `type="module"`. Esa decisión rompió la ejecución al abrir el HTML directamente desde el disco y podía impedir los contadores, sticky y countdown. Se restauró `script src="js/app.js" defer` y se empaquetaron los mismos componentes en un bundle IIFE. No se cambió CSS, copy ni tiempos de las animaciones. Se añadió un guard de bootstrap por documento para que recargar el script no duplique listeners ni timers.
+
+Comparación con el archivo V11.45 adjuntado: su `js/app.js` es idéntico al del handoff V11.46; se conserva esa mecánica de animación.

@@ -13,3 +13,5 @@ El código completo está en [landing-playbook-v12.0-clean-baseline/](landing-pl
 La V11.46 se conservó como baseline visual. Se corrigieron el overflow del reel y el recorte de la píldora del sticky, sin cambiar el copy ni rediseñar.
 
 Las URLs de Payhip y Bunny siguen vacías, como en el handoff original. Guardar estos archivos en GitHub no activa un hosting ni GitHub Pages.
+
+La descarga actual incluye la corrección de carga del JavaScript: los contadores, reel, sticky y countdown se ejecutan desde un script autocontenido, también al abrir el HTML directamente. Se mantienen la reducción de movimiento y la expiración persistente de cinco minutos.

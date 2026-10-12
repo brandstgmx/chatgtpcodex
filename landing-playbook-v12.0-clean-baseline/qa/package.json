@@ -4,11 +4,15 @@
   "version": "12.0.0",
   "scripts": {
     "test": "node runtime.cjs && node advanced.cjs && node reel.cjs && node sticky.cjs",
-    "visual": "node compare.cjs && node visual.cjs"
+    "visual": "node compare.cjs && node visual.cjs",
+    "build": "node build.cjs",
+    "build:check": "node build.cjs --check",
+    "test:animations": "node animations.cjs && node local-compatible.cjs"
   },
   "devDependencies": {
-    "playwright": "1.62.1",
+    "esbuild": "0.28.2",
     "pixelmatch": "8.0.0",
+    "playwright": "1.62.1",
     "pngjs": "7.0.0"
   }
 }

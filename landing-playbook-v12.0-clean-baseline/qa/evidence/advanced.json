@@ -40,7 +40,7 @@
       "pass": true
     },
     {
-      "name": "module init idempotent",
+      "name": "classic bundle bootstrap idempotent",
       "pass": true
     },
     {

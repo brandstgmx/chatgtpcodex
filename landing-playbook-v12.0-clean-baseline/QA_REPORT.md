@@ -38,9 +38,9 @@ En cada resolución se tomaron 45 muestras al intentar repetidamente llegar al f
 | Área | Resultado y alcance |
 | --- | --- |
 | HTML | Parseo html5lib sin errores; IDs únicos; footer y sticky hijos directos de body; ningún fixed bajo un ancestro transformado, filtrado o con perspectiva. |
-| Copy / SEO / assets | HTML íntegramente idéntico salvo ES module y eliminación del span vacío invisible. Imágenes, robots y sitemap idénticos byte por byte. Hashes del handoff original correctos. |
+| Copy / SEO / assets | HTML íntegramente idéntico salvo eliminación del span vacío invisible; carga clásica con `defer` conservada. Imágenes, robots y sitemap idénticos byte por byte. Hashes del handoff original correctos. |
 | CSS | Parseo recursivo tinycss2 sin errores; reglas base consolidadas; responsive conservado; recorte del reel sin overflow accidental. |
-| JS | `node --check` aprobado para los 14 módulos. Inicialización repetida sin timers adicionales. Sin null dereferences ni errores de consola observados. |
+| JS | `node --check` aprobado para los 15 archivos JS, incluido el bundle clásico generado. Inicialización repetida sin timers adicionales. Sin null dereferences ni errores de consola observados. |
 | Hero / portada | Imagen cargada, dimensiones contenidas y estilos del baseline conservados en los ocho viewports. Canvas activo en runtime y reduced motion respetado. |
 | VSL | Placeholder y evento de inicio aprobados. Creación de iframe y eventos start/complete aprobados con fixture local y origen verificado. |
 | CTA / purchase | Scroll al bloque de compra aprobado; precio y layout conservados; sin navegación ficticia cuando el checkout está vacío. Checkout configurado validado con fixture local. |
@@ -77,3 +77,13 @@ El sticky se compara por separado: la píldora naranja aparece ahora completa, c
 - No se publicó el sitio ni se modificó el repositorio remoto.
 
 No quedan bloqueos para el alcance solicitado: refactor técnico, baseline visual preservado y matriz QA completada.
+
+## Validación posterior — restauración de animaciones
+
+La entrega se corrigió para usar un script clásico autocontenido. Las pruebas de `animations.cjs` verifican en los ocho viewports los valores intermedios de los contadores, las animaciones WAAPI del reel (1000/1450/1950 ms con delay de 260 ms), el precio final $179, el sticky móvil, avance y sincronización del countdown, pulse y una sola petición del script.
+
+`local-compatible.cjs` verifica en los ocho viewports el bundle en un documento de origen opaco (`origin: null`), con storage bloqueado y sin imports ni peticiones de módulos. El sticky, countdown de fallback y reel funcionan en ese contexto. El navegador administrado de este entorno bloquea `file://` con `ERR_BLOCKED_BY_ADMINISTRATOR`; por eso no se afirma una ejecución directa de archivos locales dentro de este navegador. Se validaron la carga clásica, la ausencia de imports y el contexto opaco equivalente de ejecución, además de la matriz HTTP completa.
+
+`npm run build:check` confirma que `js/app.js` corresponde exactamente a los fuentes modulares. La inicialización idempotente se prueba recargando el bundle dos veces; la integración de VSL/checkout se prueba interceptando ese mismo archivo servido. La persistencia y expiración fija de cinco minutos se conserva.
+
+Resultados de la corrección: matriz HTTP 249/249 checks, 21/21 checks avanzados, reel 8/8, sticky 3/3, movimiento intermedio 8/8 y origen opaco 8/8. El CSS no se modificó en esta corrección.

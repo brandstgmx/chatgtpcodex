@@ -1,6 +1,6 @@
 # QA reproducible
 
-La landing no requiere Node, npm ni un build para desplegarse. Estas dependencias son sólo para QA.
+El ZIP trae `js/app.js` ya generado y no requiere Node, npm ni un build para abrir o desplegar el sitio. Estas dependencias son para QA y para regenerar el bundle cuando se editan los fuentes.
 
 ## Preparación
 
@@ -43,7 +43,7 @@ BASELINE_DIR=/ruta/al/landing-playbook-v11.46-CODEX-HANDOFF python static.py
 for f in ../js/*.js; do node --check "$f" || exit 1; done
 ```
 
-`static.py` compara íntegramente el HTML (permitiendo sólo el script ES module y la eliminación del span invisible), los assets y los archivos SEO. Verifica también los hashes del handoff original, el parseo HTML/CSS, los IDs y la ubicación del footer/sticky.
+`static.py` compara íntegramente el HTML (permitiendo sólo la eliminación del span invisible; la carga clásica con defer debe conservarse), los assets y los archivos SEO. Verifica también los hashes del handoff original, el parseo HTML/CSS, los IDs y la ubicación del footer/sticky.
 
 ## Alcance de los tests
 
@@ -56,3 +56,16 @@ for f in ../js/*.js; do node --check "$f" || exit 1; done
 `sticky.cjs`: píldora pintada, CTA, paso de clics en el padding transparente y cambios entre mobile/tablet.
 
 `evidence/` contiene los resultados y capturas de la ejecución realizada para esta entrega. No se incluyen las dependencias instaladas ni perfiles de navegador en el ZIP.
+
+## Regenerar el script de la página
+
+```sh
+cd qa
+npm ci
+npm run build
+npm run build:check
+```
+
+Edita los módulos fuente y `js/bootstrap.js`; `js/app.js` es el bundle generado. La compilación no cambia el diseño, las duraciones ni el copy.
+
+`animations.cjs` verifica movimiento intermedio y timings de números, sticky y timer en los ocho viewports. `local-compatible.cjs` verifica la carga autocontenida en origen opaco y sin storage.

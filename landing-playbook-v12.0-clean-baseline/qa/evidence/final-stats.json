@@ -1,10 +1,11 @@
 {
   "cssBytes": 95772,
   "cssFiles": 13,
-  "jsBytes": 50057,
-  "jsFiles": 14,
+  "jsBytes": 98192,
+  "jsFiles": 15,
   "rules": 625,
   "declarations": 2458,
   "keyframes": 13,
-  "unconditionalDuplicates": []
+  "unconditionalDuplicates": [],
+  "runtimeScriptRequests": 1
 }
