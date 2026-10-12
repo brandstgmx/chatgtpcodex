@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "name": "deadline exactly 300000ms",
+      "pass": true
+    },
+    {
+      "name": "pulse once per changed second",
+      "pass": true,
+      "detail": {
+        "starts": 1
+      }
+    },
+    {
+      "name": "active at deadline minus 1ms",
+      "pass": true
+    },
+    {
+      "name": "expires at exact deadline",
+      "pass": true
+    },
+    {
+      "name": "expiration clears countdown interval",
+      "pass": true
+    },
+    {
+      "name": "expiration stays fixed",
+      "pass": true
+    },
+    {
+      "name": "tab attention hidden title",
+      "pass": true
+    },
+    {
+      "name": "tab attention alternates at 1.5s",
+      "pass": true
+    },
+    {
+      "name": "tab attention restores immediately",
+      "pass": true
+    },
+    {
+      "name": "module init idempotent",
+      "pass": true
+    },
+    {
+      "name": "FAQ rapid interruption leaves usable state",
+      "pass": true
+    },
+    {
+      "name": "local-blocked fallback",
+      "pass": true
+    },
+    {
+      "name": "both-blocked fallback",
+      "pass": true
+    },
+    {
+      "name": "read-fails fallback",
+      "pass": true
+    },
+    {
+      "name": "browser close/reopen preserves deadline",
+      "pass": true
+    },
+    {
+      "name": "reduced motion disables pulse and sticky shine",
+      "pass": true
+    },
+    {
+      "name": "reduced motion static 179",
+      "pass": true
+    },
+    {
+      "name": "reduced motion native FAQ",
+      "pass": true
+    },
+    {
+      "name": "VSL configured iframe and events",
+      "pass": true
+    },
+    {
+      "name": "configured checkout navigation",
+      "pass": true
+    },
+    {
+      "name": "advanced console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

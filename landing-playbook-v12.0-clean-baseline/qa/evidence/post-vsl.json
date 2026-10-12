@@ -1,0 +1,127 @@
+[
+  {
+    "width": 768,
+    "height": 1024,
+    "pass": true,
+    "pair": [
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 706.546875,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      },
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 706.546875,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "pass": true,
+    "pair": [
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      },
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      }
+    ]
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "pass": true,
+    "pair": [
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      },
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "pass": true,
+    "pair": [
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      },
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      }
+    ]
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "pass": true,
+    "pair": [
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      },
+      {
+        "class": "post-vsl-cta is-visible",
+        "filter": "blur(0px)",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "height": 66,
+        "width": 840,
+        "html": "\n      <p><strong>Si ya quieres evaluarlo:</strong> llévate la guía completa por <span>$179 MXN</span>.</p>\n      <a class=\"button post-vsl-cta__button\" href=\"#oferta\" data-cta-location=\"post-vsl\">Ver la oferta <span aria-hidden=\"true\">↓</span></a>\n    "
+      }
+    ]
+  }
+]

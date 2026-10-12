@@ -1,0 +1,82 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "expectedTechnicalDifferences": 52,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "expectedTechnicalDifferences": 52,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "expectedTechnicalDifferences": 52,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "expectedTechnicalDifferences": 40,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "expectedTechnicalDifferences": 40,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "expectedTechnicalDifferences": 40,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "expectedTechnicalDifferences": 40,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "expectedTechnicalDifferences": 40,
+    "unexpectedDifferences": [],
+    "errors": [
+      [],
+      []
+    ]
+  }
+]

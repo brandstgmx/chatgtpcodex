@@ -1,0 +1,9 @@
+{
+  "html_parse_errors": [],
+  "html_only_technical_changes": true,
+  "ids_unique": true,
+  "body_children": true,
+  "assets_identical": true,
+  "baseline_checksums": true,
+  "css_parse_errors": []
+}

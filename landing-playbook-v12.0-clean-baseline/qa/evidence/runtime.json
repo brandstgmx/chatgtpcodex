@@ -1,0 +1,4472 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 633,
+            "bottom": 800,
+            "height": 167
+          },
+          "capsule": {
+            "top": 661,
+            "bottom": 695,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "orange capsule painted",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 633,
+            "bottom": 800,
+            "height": 167
+          },
+          "capsule": {
+            "top": 661,
+            "bottom": 695,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky fixed at bottom",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 633,
+            "bottom": 800,
+            "height": 167
+          },
+          "capsule": {
+            "top": 661,
+            "bottom": 695,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky does not change document height",
+        "pass": true,
+        "detail": {
+          "h": 3127,
+          "hRemoved": 3127
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          },
+          {
+            "scrollHeight": 3122,
+            "clientHeight": 800,
+            "footerBottom": 3122.15625,
+            "scrollY": 2322,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3122,
+          "clientHeight": 800,
+          "footerBottom": 3122.15625,
+          "scrollY": 2322,
+          "scrollWidth": 360,
+          "clientWidth": 360
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3122,
+      "clientHeight": 800,
+      "footerBottom": 3122.15625,
+      "scrollY": 2322,
+      "scrollWidth": 360,
+      "clientWidth": 360
+    },
+    "sticky": {
+      "visible": true,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 633,
+        "bottom": 800,
+        "height": 167
+      },
+      "capsule": {
+        "top": 661,
+        "bottom": 695,
+        "width": 203.265625
+      },
+      "hit": true
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 677,
+            "bottom": 844,
+            "height": 167
+          },
+          "capsule": {
+            "top": 705,
+            "bottom": 739,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "orange capsule painted",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 677,
+            "bottom": 844,
+            "height": 167
+          },
+          "capsule": {
+            "top": 705,
+            "bottom": 739,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky fixed at bottom",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 677,
+            "bottom": 844,
+            "height": 167
+          },
+          "capsule": {
+            "top": 705,
+            "bottom": 739,
+            "width": 203.265625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky does not change document height",
+        "pass": true,
+        "detail": {
+          "h": 3252,
+          "hRemoved": 3252
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          {
+            "scrollHeight": 3247,
+            "clientHeight": 844,
+            "footerBottom": 3247.359375,
+            "scrollY": 2403,
+            "scrollWidth": 390,
+            "clientWidth": 390
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3247,
+          "clientHeight": 844,
+          "footerBottom": 3247.359375,
+          "scrollY": 2403,
+          "scrollWidth": 390,
+          "clientWidth": 390
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3247,
+      "clientHeight": 844,
+      "footerBottom": 3247.359375,
+      "scrollY": 2403,
+      "scrollWidth": 390,
+      "clientWidth": 390
+    },
+    "sticky": {
+      "visible": true,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 677,
+        "bottom": 844,
+        "height": 167
+      },
+      "capsule": {
+        "top": 705,
+        "bottom": 739,
+        "width": 203.265625
+      },
+      "hit": true
+    },
+    "errors": []
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 765,
+            "bottom": 932,
+            "height": 167
+          },
+          "capsule": {
+            "top": 793,
+            "bottom": 827,
+            "width": 217.890625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "orange capsule painted",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 765,
+            "bottom": 932,
+            "height": 167
+          },
+          "capsule": {
+            "top": 793,
+            "bottom": 827,
+            "width": 217.890625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky fixed at bottom",
+        "pass": true,
+        "detail": {
+          "visible": true,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 765,
+            "bottom": 932,
+            "height": 167
+          },
+          "capsule": {
+            "top": 793,
+            "bottom": 827,
+            "width": 217.890625
+          },
+          "hit": true
+        }
+      },
+      {
+        "name": "sticky does not change document height",
+        "pass": true,
+        "detail": {
+          "h": 3352,
+          "hRemoved": 3352
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          },
+          {
+            "scrollHeight": 3347,
+            "clientHeight": 932,
+            "footerBottom": 3346.515625,
+            "scrollY": 2415,
+            "scrollWidth": 430,
+            "clientWidth": 430
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3347,
+          "clientHeight": 932,
+          "footerBottom": 3346.515625,
+          "scrollY": 2415,
+          "scrollWidth": 430,
+          "clientWidth": 430
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3347,
+      "clientHeight": 932,
+      "footerBottom": 3346.515625,
+      "scrollY": 2415,
+      "scrollWidth": 430,
+      "clientWidth": 430
+    },
+    "sticky": {
+      "visible": true,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 765,
+        "bottom": 932,
+        "height": 167
+      },
+      "capsule": {
+        "top": 793,
+        "bottom": 827,
+        "width": 217.890625
+      },
+      "hit": true
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": false,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 0,
+            "bottom": 0,
+            "height": 0
+          },
+          "capsule": {
+            "top": 0,
+            "bottom": 0,
+            "width": 0
+          },
+          "hit": false
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          {
+            "scrollHeight": 3409,
+            "clientHeight": 1024,
+            "footerBottom": 3408.5625,
+            "scrollY": 2385,
+            "scrollWidth": 768,
+            "clientWidth": 768
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3409,
+          "clientHeight": 1024,
+          "footerBottom": 3408.5625,
+          "scrollY": 2385,
+          "scrollWidth": 768,
+          "clientWidth": 768
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3409,
+      "clientHeight": 1024,
+      "footerBottom": 3408.5625,
+      "scrollY": 2385,
+      "scrollWidth": 768,
+      "clientWidth": 768
+    },
+    "sticky": {
+      "visible": false,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "capsule": {
+        "top": 0,
+        "bottom": 0,
+        "width": 0
+      },
+      "hit": false
+    },
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": false,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 0,
+            "bottom": 0,
+            "height": 0
+          },
+          "capsule": {
+            "top": 0,
+            "bottom": 0,
+            "width": 0
+          },
+          "hit": false
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          {
+            "scrollHeight": 3593,
+            "clientHeight": 768,
+            "footerBottom": 3592.546875,
+            "scrollY": 2825,
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3593,
+          "clientHeight": 768,
+          "footerBottom": 3592.546875,
+          "scrollY": 2825,
+          "scrollWidth": 1024,
+          "clientWidth": 1024
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3593,
+      "clientHeight": 768,
+      "footerBottom": 3592.546875,
+      "scrollY": 2825,
+      "scrollWidth": 1024,
+      "clientWidth": 1024
+    },
+    "sticky": {
+      "visible": false,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "capsule": {
+        "top": 0,
+        "bottom": 0,
+        "width": 0
+      },
+      "hit": false
+    },
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": false,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 0,
+            "bottom": 0,
+            "height": 0
+          },
+          "capsule": {
+            "top": 0,
+            "bottom": 0,
+            "width": 0
+          },
+          "hit": false
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          {
+            "scrollHeight": 3547,
+            "clientHeight": 768,
+            "footerBottom": 3546.609375,
+            "scrollY": 2779,
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3547,
+          "clientHeight": 768,
+          "footerBottom": 3546.609375,
+          "scrollY": 2779,
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3547,
+      "clientHeight": 768,
+      "footerBottom": 3546.609375,
+      "scrollY": 2779,
+      "scrollWidth": 1366,
+      "clientWidth": 1366
+    },
+    "sticky": {
+      "visible": false,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "capsule": {
+        "top": 0,
+        "bottom": 0,
+        "width": 0
+      },
+      "hit": false
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": false,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 0,
+            "bottom": 0,
+            "height": 0
+          },
+          "capsule": {
+            "top": 0,
+            "bottom": 0,
+            "width": 0
+          },
+          "hit": false
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2739,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          },
+          {
+            "scrollHeight": 3661,
+            "clientHeight": 900,
+            "footerBottom": 3660.859375,
+            "scrollY": 2761,
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3661,
+          "clientHeight": 900,
+          "footerBottom": 3660.859375,
+          "scrollY": 2761,
+          "scrollWidth": 1440,
+          "clientWidth": 1440
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3661,
+      "clientHeight": 900,
+      "footerBottom": 3660.859375,
+      "scrollY": 2761,
+      "scrollWidth": 1440,
+      "clientWidth": 1440
+    },
+    "sticky": {
+      "visible": false,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "capsule": {
+        "top": 0,
+        "bottom": 0,
+        "width": 0
+      },
+      "hit": false
+    },
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "checks": [
+      {
+        "name": "hero image loaded",
+        "pass": true
+      },
+      {
+        "name": "hero fits",
+        "pass": true
+      },
+      {
+        "name": "five minute deadline",
+        "pass": true
+      },
+      {
+        "name": "one countdown interval",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at header",
+        "pass": true
+      },
+      {
+        "name": "sticky mobile only",
+        "pass": true,
+        "detail": {
+          "visible": false,
+          "position": "fixed",
+          "bottom": "0px",
+          "contain": "paint",
+          "rect": {
+            "top": 0,
+            "bottom": 0,
+            "height": 0
+          },
+          "capsule": {
+            "top": 0,
+            "bottom": 0,
+            "width": 0
+          },
+          "hit": false
+        }
+      },
+      {
+        "name": "CTA scrolls to purchase",
+        "pass": true
+      },
+      {
+        "name": "one CTA event",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden near purchase",
+        "pass": true
+      },
+      {
+        "name": "reel ends at 179",
+        "pass": true
+      },
+      {
+        "name": "purchase placeholder does not navigate",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "FAQ closes",
+        "pass": true
+      },
+      {
+        "name": "VSL placeholder tracking",
+        "pass": true
+      },
+      {
+        "name": "price anchor counters",
+        "pass": true
+      },
+      {
+        "name": "refresh preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "second tab preserves deadline",
+        "pass": true
+      },
+      {
+        "name": "hidden pauses countdown",
+        "pass": true
+      },
+      {
+        "name": "resume has one countdown timer",
+        "pass": true
+      },
+      {
+        "name": "BFCache resumes once",
+        "pass": true
+      },
+      {
+        "name": "storage event syncs tabs",
+        "pass": true
+      },
+      {
+        "name": "fixed expired state",
+        "pass": true
+      },
+      {
+        "name": "expired never restarts",
+        "pass": true
+      },
+      {
+        "name": "finite stable scrollHeight",
+        "pass": true,
+        "detail": [
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          {
+            "scrollHeight": 3729,
+            "clientHeight": 1080,
+            "footerBottom": 3728.78125,
+            "scrollY": 2649,
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          }
+        ]
+      },
+      {
+        "name": "footer is real document end",
+        "pass": true,
+        "detail": {
+          "scrollHeight": 3729,
+          "clientHeight": 1080,
+          "footerBottom": 3728.78125,
+          "scrollY": 2649,
+          "scrollWidth": 1920,
+          "clientWidth": 1920
+        }
+      },
+      {
+        "name": "no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "sticky hidden at footer",
+        "pass": true
+      },
+      {
+        "name": "body children and unique IDs",
+        "pass": true
+      },
+      {
+        "name": "no transformed fixed ancestor",
+        "pass": true
+      },
+      {
+        "name": "no console errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "geometry": {
+      "scrollHeight": 3729,
+      "clientHeight": 1080,
+      "footerBottom": 3728.78125,
+      "scrollY": 2649,
+      "scrollWidth": 1920,
+      "clientWidth": 1920
+    },
+    "sticky": {
+      "visible": false,
+      "position": "fixed",
+      "bottom": "0px",
+      "contain": "paint",
+      "rect": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0
+      },
+      "capsule": {
+        "top": 0,
+        "bottom": 0,
+        "width": 0
+      },
+      "hit": false
+    },
+    "errors": []
+  }
+]

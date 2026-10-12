@@ -1,0 +1,58 @@
+[
+  {
+    "width": 360,
+    "imageHeight": 3127,
+    "differingPixels": 0,
+    "percent": 0,
+    "pass": true
+  },
+  {
+    "width": 390,
+    "imageHeight": 3252,
+    "differingPixels": 0,
+    "percent": 0,
+    "pass": true
+  },
+  {
+    "width": 430,
+    "imageHeight": 3352,
+    "differingPixels": 0,
+    "percent": 0,
+    "pass": true
+  },
+  {
+    "width": 768,
+    "imageHeight": 3409,
+    "differingPixels": 414,
+    "percent": 0.015812921677911408,
+    "pass": true
+  },
+  {
+    "width": 1024,
+    "imageHeight": 3593,
+    "differingPixels": 1326,
+    "percent": 0.03604013011411077,
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "imageHeight": 3547,
+    "differingPixels": 3817,
+    "percent": 0.07877896525263549,
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "imageHeight": 3661,
+    "differingPixels": 0,
+    "percent": 0,
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "imageHeight": 3729,
+    "differingPixels": 245,
+    "percent": 0.003421940645391973,
+    "pass": true
+  }
+]

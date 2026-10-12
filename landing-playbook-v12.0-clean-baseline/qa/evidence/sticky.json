@@ -1,0 +1,32 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "painted": true,
+    "clickThrough": true,
+    "target": true,
+    "tabletHidden": true,
+    "mobileRestored": true,
+    "pass": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "painted": true,
+    "clickThrough": true,
+    "target": true,
+    "tabletHidden": true,
+    "mobileRestored": true,
+    "pass": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "painted": true,
+    "clickThrough": true,
+    "target": true,
+    "tabletHidden": true,
+    "mobileRestored": true,
+    "pass": true
+  }
+]

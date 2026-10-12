@@ -1,0 +1,219 @@
+/* price-reel — V11.46 visual baseline. */
+
+.price-reel-host {
+  position: relative;
+  min-height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.price-reel-host .ofr-price {
+  position: relative;
+  width: 100%;
+}
+
+.price-reel-host .ofr-amount {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(78px, 7vw, 104px);
+  line-height: 1;
+}
+.price-reel-host .ofr-fig {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: flex-start;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0;
+  user-select: none;
+  transform-origin: 50% 52%;
+  will-change: transform;
+}
+
+.price-reel-host .ofr-cur {
+  font-size: 0.29em;
+  line-height: 1;
+  color: var(--indigo);
+  letter-spacing: -0.02em;
+  margin-top: 0.36em;
+  transition: transform 0.62s cubic-bezier(0.7, 0, 0.25, 1);
+  margin-right: 0.22em;
+}
+
+.price-reel-host .ofr-cents {
+  font-size: 0.29em;
+  line-height: 1;
+  color: var(--indigo);
+  letter-spacing: -0.02em;
+  margin-top: 0.36em;
+  transition: transform 0.62s cubic-bezier(0.7, 0, 0.25, 1);
+  margin-left: 0.08em;
+}
+
+.price-reel-host .ofr-num {
+  position: relative;
+  display: inline-flex;
+  transition: transform 0.62s cubic-bezier(0.7, 0, 0.25, 1);
+}
+
+.price-reel-host .ofr-reel {
+  overflow: clip;
+  position: relative;
+  display: block;
+  height: 1em;
+  padding: 0 0.12em;
+  margin: 0 -0.12em;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.price-reel-host .ofr-reel::before {
+  content: attr(data-d);
+  display: block;
+  visibility: hidden;
+}
+
+.price-reel-host .ofr-reel + .ofr-reel {
+  margin-left: -0.155em;
+}
+
+.price-reel-host .ofr-strip {
+  position: absolute;
+  left: 0.12em;
+  right: 0.12em;
+  top: 0;
+  display: block;
+}
+
+.price-reel-host .ofr-cell {
+  display: flex;
+  justify-content: center;
+  height: 1em;
+  background: none !important;
+  background-clip: initial !important;
+  color: #05060a !important;
+  text-shadow: none !important;
+}
+
+.price-reel-host .ofr-cell::before {
+  content: attr(data-d);
+}
+
+.price-reel-host .ofr-cur::before {
+  content: attr(data-t);
+}
+
+.price-reel-host .ofr-cents::before {
+  content: attr(data-t);
+}
+
+.price-reel-host .ofr-amount.is-hit .ofr-fig {
+  animation: ofrBeat 1.05s cubic-bezier(0.3, 0, 0.3, 1) both;
+}
+
+.price-reel-host .ofr-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.ofr-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (max-width: 760px) {
+  .price-reel-host .ofr-amount {
+    font-size: clamp(72px, 21vw, 94px);
+  }
+}
+
+@media (max-width: 360px) {
+  .price-reel-host .ofr-amount {
+    font-size: clamp(64px, 20vw, 82px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .price-reel-host .ofr-amount.is-hit .ofr-fig {
+    animation: none !important;
+  }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .price-reel-host .ofr-amount {
+    font-size: clamp(72px, 8.7vw, 94px);
+  }
+}
+@media (max-width: 760px) {
+  .price-reel-host {
+    min-height: 104px;
+    justify-content: center;
+  }
+
+  .price-reel-host .ofr-amount {
+    justify-content: center;
+  }
+}
+@media (min-width: 761px) {
+  .price-reel-host {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  .price-reel-host .ofr-amount {
+    justify-content: flex-start !important;
+  }
+}
+@media (min-width: 761px) {
+  .purchase-col--price .price-reel-host {
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .purchase-col--price .price-reel-host .ofr-amount {
+    justify-content: center !important;
+  }
+}
+.price-reel-host::before {
+  content: none !important;
+  display: none !important;
+}
+.price-reel-host::after {
+  content: none !important;
+  display: none !important;
+}
+.price-reel-host .ofr-amount::before {
+  content: none !important;
+  display: none !important;
+}
+.price-reel-host .ofr-amount::after {
+  content: none !important;
+  display: none !important;
+}

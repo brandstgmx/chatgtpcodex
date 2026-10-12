@@ -1,0 +1,14 @@
+{
+  "name": "landing-playbook-v12-baseline-qa",
+  "private": true,
+  "version": "12.0.0",
+  "scripts": {
+    "test": "node runtime.cjs && node advanced.cjs && node reel.cjs && node sticky.cjs",
+    "visual": "node compare.cjs && node visual.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "pixelmatch": "8.0.0",
+    "pngjs": "7.0.0"
+  }
+}
