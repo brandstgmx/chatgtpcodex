@@ -51,7 +51,7 @@ for f in ../js/*.js; do node --check "$f" || exit 1; done
 
 `advanced.cjs`: expiración exacta, pulse, storage bloqueado, persistencia al cerrar/reabrir Chromium, init idempotente, FAQ interrumpido, tab attention y fixtures de VSL/checkout. Los eventos de visibilidad y BFCache se simulan; la reapertura del navegador usa un perfil persistente real.
 
-`reel.cjs`: $499 → $179 y 45 muestras por viewport durante la animación, incluyendo el intento repetido de llegar al final.
+`reel.cjs`: $999 → $349 y 45 muestras por viewport durante la animación, incluyendo el intento repetido de llegar al final.
 
 `sticky.cjs`: píldora pintada, CTA, paso de clics en el padding transparente y cambios entre mobile/tablet.
 

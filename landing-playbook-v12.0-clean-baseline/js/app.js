@@ -15,7 +15,7 @@
     // Elimina aquí cualquier método que no aparezca en el checkout final
     product: {
       name: "\xBFMe conviene franquiciar mi negocio o seguir yo solo?",
-      value: 179,
+      value: 349,
       currency: "MXN"
     }
   };
@@ -572,6 +572,7 @@
   function initOfferCountdown() {
     if (initialized6) return;
     initialized6 = true;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const OFFER_DURATION_MINUTES = 5;
     const OFFER_STORAGE_KEY = "ltf_offer_expires_at_v5";
     const offerStatus = document.querySelector("[data-offer-status]");
@@ -702,12 +703,12 @@
         if (offerCountdownPrefix && offerCountdownSeconds) {
           offerCountdownPrefix.textContent = formatted.prefix;
           offerCountdownSeconds.textContent = formatted.seconds;
-          if (formatted.seconds !== previousDesktopSecond && !prefersReducedMotion) {
-            previousDesktopSecond = formatted.seconds;
+          if (formatted.seconds !== previousDesktopSecond && !reducedMotion.matches) {
             offerCountdownSeconds.classList.remove("is-pulsing");
             void offerCountdownSeconds.offsetWidth;
             offerCountdownSeconds.classList.add("is-pulsing");
           }
+          previousDesktopSecond = formatted.seconds;
         } else {
           offerCountdown.textContent = formatted.text;
         }
@@ -719,12 +720,12 @@
           "aria-label",
           `Tiempo restante de la oferta: ${formatted.text}`
         );
-        if (formatted.seconds !== previousMobileSecond && !prefersReducedMotion) {
-          previousMobileSecond = formatted.seconds;
+        if (formatted.seconds !== previousMobileSecond && !reducedMotion.matches) {
           mobileOfferSeconds.classList.remove("is-pulsing");
           void mobileOfferSeconds.offsetWidth;
           mobileOfferSeconds.classList.add("is-pulsing");
         }
+        previousMobileSecond = formatted.seconds;
       }
       if (offerCountdown) {
         offerCountdown.setAttribute(
@@ -1152,8 +1153,8 @@
     if (!price || !amount || !fig || !num) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     const canAnimate = typeof Element.prototype.animate === "function" && "IntersectionObserver" in window;
-    const value = 179;
-    const anchorValue = 499;
+    const value = 349;
+    const anchorValue = 999;
     const currency = "$";
     const intPart = (n) => String(Math.floor(n));
     const finalDigits = intPart(value).split("");
@@ -1166,12 +1167,15 @@
       centsEl.setAttribute("data-t", "");
       centsEl.hidden = true;
     }
-    if (sr) sr.textContent = "$179 MXN";
+    if (sr) sr.textContent = "$349 MXN";
     const reelHTML = (d) => `<span class="ofr-reel" data-d="${d}"><span class="ofr-strip"><span class="ofr-cell" data-d="${d}"></span></span></span>`;
     num.innerHTML = finalDigits.map(reelHTML).join("");
     const reels = num.querySelectorAll(":scope > .ofr-reel");
     if (!canAnimate) return;
-    const run = (from, count) => Array.from({ length: count }, (_, i) => String((from + i) % 10));
+    const run = (from, count) => Array.from(
+      { length: count },
+      (_, i) => String(((from - i) % 10 + 10) % 10)
+    );
     const cell = (d) => {
       const c = document.createElement("span");
       c.className = "ofr-cell";
@@ -1194,8 +1198,8 @@
       const p = total - 1 - i;
       const s = Number(startDigits[i]);
       const fd = finalDigits[i];
-      const steps = (Number(fd) - s + 10) % 10 + 10 * turnsAt(p);
-      all.push(mk(reels[i], [String(s), ...run(s + 1, steps)], fd, p));
+      const steps = (s - Number(fd) + 10) % 10 + 10 * turnsAt(p);
+      all.push(mk(reels[i], [String(s), ...run(s - 1, steps)], fd, p));
     }
     const longest = Math.max(...all.map((r) => r.dur));
     function fill(r) {
@@ -1289,6 +1293,7 @@
     function play() {
       if (state !== "armed") return;
       state = "running";
+      io.disconnect();
       const blur = Math.max(
         2,
         parseFloat(getComputedStyle(amount).fontSize) * 0.028
@@ -1307,7 +1312,6 @@
         () => {
           finish();
           state = "done";
-          if (!inView) arm();
         },
         delay + longest + 1350
       );
@@ -1319,8 +1323,6 @@
         if (reduce.matches) return;
         if (e.isIntersecting && e.intersectionRatio >= 0.55 && state === "armed") {
           play();
-        } else if (!e.isIntersecting && state === "done") {
-          arm();
         }
       },
       {

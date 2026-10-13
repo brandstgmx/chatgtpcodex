@@ -7,7 +7,8 @@
     "visual": "node compare.cjs && node visual.cjs",
     "build": "node build.cjs",
     "build:check": "node build.cjs --check",
-    "test:animations": "node animations.cjs && node local-compatible.cjs"
+    "test:animations": "node animations.cjs && node local-compatible.cjs",
+    "test:offer": "node offer-update.cjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

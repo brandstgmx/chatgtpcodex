@@ -11,7 +11,7 @@ export const CONFIG = {
   ], // Elimina aquí cualquier método que no aparezca en el checkout final
   product: {
     name: "¿Me conviene franquiciar mi negocio o seguir yo solo?",
-    value: 179,
+    value: 349,
     currency: "MXN",
   },
 };

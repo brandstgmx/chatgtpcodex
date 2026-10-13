@@ -15,3 +15,7 @@ Los valores originales de Payhip y Bunny siguen vacíos. La landing conserva su 
 La metadata SEO, el copy y las imágenes originales se conservaron. El canonical y sitemap siguen apuntando a la URL original del handoff.
 
 Consulta `QA_REPORT.md`, `CHANGELOG_REFACTOR.md` y `qa/README.md` para resultados, excepciones de corrección y reproducción de las pruebas. La carpeta `qa/` no es necesaria para servir la landing.
+
+### Precios actuales
+
+Precio real: **$999 MXN**. Precio especial: **$349 MXN**. El reel se activa al entrar el precio en pantalla y termina en $349. Los segundos de ambas píldoras pulsan durante los cinco minutos completos, salvo con movimiento reducido.

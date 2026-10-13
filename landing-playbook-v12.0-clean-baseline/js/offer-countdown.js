@@ -1,10 +1,9 @@
 let initialized = false;
 
-import { prefersReducedMotion } from "./shared.js";
-
 export function initOfferCountdown() {
   if (initialized) return;
   initialized = true;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const OFFER_DURATION_MINUTES = 5;
   const OFFER_STORAGE_KEY = "ltf_offer_expires_at_v5";
   const offerStatus = document.querySelector("[data-offer-status]");
@@ -169,13 +168,13 @@ export function initOfferCountdown() {
 
         if (
           formatted.seconds !== previousDesktopSecond &&
-          !prefersReducedMotion
+          !reducedMotion.matches
         ) {
-          previousDesktopSecond = formatted.seconds;
           offerCountdownSeconds.classList.remove("is-pulsing");
           void offerCountdownSeconds.offsetWidth;
           offerCountdownSeconds.classList.add("is-pulsing");
         }
+        previousDesktopSecond = formatted.seconds;
       } else {
         offerCountdown.textContent = formatted.text;
       }
@@ -189,12 +188,15 @@ export function initOfferCountdown() {
         `Tiempo restante de la oferta: ${formatted.text}`,
       );
 
-      if (formatted.seconds !== previousMobileSecond && !prefersReducedMotion) {
-        previousMobileSecond = formatted.seconds;
+      if (
+        formatted.seconds !== previousMobileSecond &&
+        !reducedMotion.matches
+      ) {
         mobileOfferSeconds.classList.remove("is-pulsing");
         void mobileOfferSeconds.offsetWidth;
         mobileOfferSeconds.classList.add("is-pulsing");
       }
+      previousMobileSecond = formatted.seconds;
     }
 
     if (offerCountdown) {

@@ -14,8 +14,8 @@ export function initPriceReel() {
     typeof Element.prototype.animate === "function" &&
     "IntersectionObserver" in window;
 
-  const value = 179;
-  const anchorValue = 499;
+  const value = 349;
+  const anchorValue = 999;
   const currency = "$";
 
   const intPart = (n) => String(Math.floor(n));
@@ -30,7 +30,7 @@ export function initPriceReel() {
     centsEl.setAttribute("data-t", "");
     centsEl.hidden = true;
   }
-  if (sr) sr.textContent = "$179 MXN";
+  if (sr) sr.textContent = "$349 MXN";
 
   const reelHTML = (d) =>
     `<span class="ofr-reel" data-d="${d}"><span class="ofr-strip"><span class="ofr-cell" data-d="${d}"></span></span></span>`;
@@ -41,7 +41,9 @@ export function initPriceReel() {
   if (!canAnimate) return;
 
   const run = (from, count) =>
-    Array.from({ length: count }, (_, i) => String((from + i) % 10));
+    Array.from({ length: count }, (_, i) =>
+      String((((from - i) % 10) + 10) % 10),
+    );
 
   const cell = (d) => {
     const c = document.createElement("span");
@@ -70,8 +72,8 @@ export function initPriceReel() {
     const s = Number(startDigits[i]);
 
     const fd = finalDigits[i];
-    const steps = ((Number(fd) - s + 10) % 10) + 10 * turnsAt(p);
-    all.push(mk(reels[i], [String(s), ...run(s + 1, steps)], fd, p));
+    const steps = ((s - Number(fd) + 10) % 10) + 10 * turnsAt(p);
+    all.push(mk(reels[i], [String(s), ...run(s - 1, steps)], fd, p));
   }
 
   const longest = Math.max(...all.map((r) => r.dur));
@@ -181,6 +183,7 @@ export function initPriceReel() {
     if (state !== "armed") return;
 
     state = "running";
+    io.disconnect();
 
     const blur = Math.max(
       2,
@@ -203,7 +206,6 @@ export function initPriceReel() {
       () => {
         finish();
         state = "done";
-        if (!inView) arm();
       },
       delay + longest + 1350,
     );
@@ -222,8 +224,6 @@ export function initPriceReel() {
         state === "armed"
       ) {
         play();
-      } else if (!e.isIntersecting && state === "done") {
-        arm();
       }
     },
     {

@@ -101,7 +101,7 @@ html = html.replace(
       storageBlocked &&
       ticks &&
       spinning &&
-      final === "179" &&
+      final === "349" &&
       sticky === width <= 640 &&
       errors.length === 0;
     results.push({

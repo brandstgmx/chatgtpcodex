@@ -110,7 +110,7 @@ fs.mkdirSync(OUT, { recursive: true });
           (a) => a.duration === ms && a.delay === 260 && a.state === "running",
         ),
       ) &&
-      digits === "179" &&
+      digits === "349" &&
       timerMoves &&
       sharedTimer &&
       pulse &&

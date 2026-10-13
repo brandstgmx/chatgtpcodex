@@ -40,3 +40,11 @@ No se agregaron funcionalidades al producto. No se publicó ni se configuraron s
 La primera entrega cambió la carga a `type="module"`. Esa decisión rompió la ejecución al abrir el HTML directamente desde el disco y podía impedir los contadores, sticky y countdown. Se restauró `script src="js/app.js" defer` y se empaquetaron los mismos componentes en un bundle IIFE. No se cambió CSS, copy ni tiempos de las animaciones. Se añadió un guard de bootstrap por documento para que recargar el script no duplique listeners ni timers.
 
 Comparación con el archivo V11.45 adjuntado: su `js/app.js` es idéntico al del handoff V11.46; se conserva esa mecánica de animación.
+
+## Ajuste de precios y animación solicitado por el usuario
+
+- Precio de referencia $999 MXN; precio de compra $349 MXN en todos los textos, accesibilidad, JSON-LD y valor de analítica.
+- Reel descendente de $999 a $349, activado cuando el precio está al menos 55% visible, una sola vez por carga. No comienza mientras el precio está fuera de pantalla.
+- Las dos píldoras pulsan en cada cambio de segundo desde el inicio de los cinco minutos; respetan movimiento reducido incluso si la preferencia cambia sin recargar.
+- Se conserva la fecha de expiración persistida: al vencer, aparece «✨ Precio de lanzamiento» y no se reinicia automáticamente.
+- CSS y composición del sitio conservados; la propuesta visual compacta sigue en la demo independiente.

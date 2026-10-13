@@ -1,6 +1,6 @@
 {
   "html_parse_errors": [],
-  "html_only_technical_changes": true,
+  "html_only_authorized_changes": true,
   "ids_unique": true,
   "body_children": true,
   "assets_identical": true,

@@ -1,0 +1,706 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298706,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3127,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298709,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3252,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298741,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3352,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298719,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3409,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298728,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3593,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298732,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3547,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298711,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3661,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "before": {
+      "digits": "999",
+      "running": 0,
+      "pulses": true,
+      "deadline": 298737,
+      "old": "$999",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lanzatufranquicia.com/#organization",
+            "name": "Lanza tu Franquicia",
+            "url": "https://lanzatufranquicia.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lanzatufranquicia.com/#website",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "Lanza tu Franquicia",
+            "inLanguage": "es-MX",
+            "publisher": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lanzatufranquicia.com/#webpage",
+            "url": "https://lanzatufranquicia.com/",
+            "name": "¿Me conviene franquiciar mi negocio? | Guía práctica 2026",
+            "description": "Guía práctica para dueños de negocio en México que quieren evaluar si les conviene franquiciar su negocio.",
+            "inLanguage": "es-MX",
+            "isPartOf": {
+              "@id": "https://lanzatufranquicia.com/#website"
+            },
+            "about": {
+              "@id": "https://lanzatufranquicia.com/#product"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://lanzatufranquicia.com/img/og-playbook.jpg",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://lanzatufranquicia.com/#product",
+            "name": "¿Me conviene franquiciar mi negocio o seguir yo solo?",
+            "description": "Guía digital para evaluar costos, requisitos y decisiones antes de franquiciar un negocio en México.",
+            "image": [
+              "https://lanzatufranquicia.com/img/ebook-cover.png",
+              "https://lanzatufranquicia.com/img/og-playbook.jpg"
+            ],
+            "brand": {
+              "@id": "https://lanzatufranquicia.com/#organization"
+            },
+            "category": "Guía digital para franquiciar un negocio",
+            "offers": {
+              "@type": "Offer",
+              "url": "https://lanzatufranquicia.com/",
+              "priceCurrency": "MXN",
+              "price": "349",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        ]
+      }
+    },
+    "during": {
+      "running": true,
+      "descending": true
+    },
+    "after": {
+      "digits": "349",
+      "height": 3729,
+      "overflow": false
+    },
+    "noReplay": true,
+    "pulsesResume": true,
+    "stableHeight": true,
+    "errors": [],
+    "pass": true
+  }
+]

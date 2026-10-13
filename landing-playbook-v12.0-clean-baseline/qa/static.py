@@ -6,8 +6,10 @@ base=Path(os.environ.get('BASELINE_DIR','/workspace/baseline/landing-playbook-v1
 results={}
 p=html5lib.HTMLParser(strict=False);p.parse((clean/'index.html').read_text());results['html_parse_errors']=p.errors
 s=BeautifulSoup((clean/'index.html').read_text(),'html.parser');old=BeautifulSoup((base/'index.html').read_text(),'html.parser')
-# The original classic-script HTML is unchanged except for the invisible empty span.
-results['html_only_technical_changes']=(base/'index.html').read_text().replace('              <span class="purchase-shine" aria-hidden="true"></span>\n','')==(clean/'index.html').read_text()
+# Baseline preserved except the invisible span and user-authorized price update.
+expected=(base/'index.html').read_text().replace('              <span class="purchase-shine" aria-hidden="true"></span>\n','')
+expected=expected.replace('$179','$349').replace('$499','$999').replace('"price": "179"','"price": "349"').replace('Precio especial 179 pesos','Precio especial 349 pesos').replace('data-d="1"','data-d="3"').replace('data-d="7"','data-d="4"')
+results['html_only_authorized_changes']=expected==(clean/'index.html').read_text()
 results['ids_unique']=len(s.select('[id]'))==len({x['id'] for x in s.select('[id]')});results['body_children']=s.footer.parent.name=='body' and s.select_one('[data-mobile-offer-bar]').parent.name=='body'
 results['assets_identical']=all(hashlib.sha256(f.read_bytes()).digest()==hashlib.sha256((clean/f.relative_to(base)).read_bytes()).digest() for f in [*(base/'img').glob('*'),base/'robots.txt',base/'sitemap.xml'])
 manifest=json.loads((base/'SOURCE_SHA256.json').read_text());results['baseline_checksums']=all(hashlib.sha256((base/name).read_bytes()).hexdigest()==sha for name,sha in manifest.items())

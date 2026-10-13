@@ -87,3 +87,13 @@ La entrega se corrigió para usar un script clásico autocontenido. Las pruebas 
 `npm run build:check` confirma que `js/app.js` corresponde exactamente a los fuentes modulares. La inicialización idempotente se prueba recargando el bundle dos veces; la integración de VSL/checkout se prueba interceptando ese mismo archivo servido. La persistencia y expiración fija de cinco minutos se conserva.
 
 Resultados de la corrección: matriz HTTP 249/249 checks, 21/21 checks avanzados, reel 8/8, sticky 3/3, movimiento intermedio 8/8 y origen opaco 8/8. El CSS no se modificó en esta corrección.
+
+## Validación del ajuste de precios y activación al llegar al pricing
+
+Solicitud posterior del usuario: $999 → $349, pulse desde el inicio de los cinco minutos y reel al entrar el precio en pantalla.
+
+`qa/offer-update.cjs` pasó en 360×800, 390×844, 430×932, 768×1024, 1024×768, 1366×768, 1440×900 y 1920×1080: precio inicial $999 sin animación fuera de pantalla, secuencias de dígitos descendentes al llegar al precio, resultado $349, sin repetición al volver al bloque, sin overflow horizontal ni crecimiento de altura, pulse en las dos píldoras desde el inicio y recuperación tras cambiar movimiento reducido. Sin errores de consola ni excepciones JavaScript. Evidencia: `qa/evidence/offer-update.json`.
+
+También pasó `qa/advanced.cjs`: duración exacta 300000 ms, un pulse por cambio de segundo, expiración exacta sin reinicio, almacenamiento persistente y fallback, movimiento reducido e integraciones con fixtures. HTML/CSS parsean sin errores y la comparación estática permite exclusivamente los precios autorizados y los cambios técnicos anteriores. El bundle coincide con sus fuentes.
+
+Los informes visuales y demás archivos de evidencia previos corresponden a las revisiones históricas indicadas; no se presentan como una nueva comparación visual de los precios actuales. La demo compacta es independiente de la composición del sitio.
