@@ -96,6 +96,7 @@ export function initPriceAnchor() {
     }
 
     /* 1. Primer monto */
+    firstCounter.textContent = "0";
     revealMoneyNode(firstFigure);
     await animateMoneyCounter(firstCounter, 1100);
 
@@ -107,6 +108,7 @@ export function initPriceAnchor() {
     await wait(260);
 
     /* 3. Segundo monto */
+    secondCounter.textContent = "0";
     revealMoneyNode(secondFigure);
     await animateMoneyCounter(secondCounter, 1250);
   }
@@ -114,14 +116,7 @@ export function initPriceAnchor() {
   function initMoneyCounters() {
     if (moneyCounterElements.length < 2) return;
 
-    /* Antes de entrar en viewport los valores quedan en 0 y ocultos. */
-    moneyCounterElements.forEach((element) => {
-      const target = Number(element.dataset.moneyCounter || "0");
-      element.textContent = formatMoneyCounter(
-        prefersReducedMotionForCounters ? target : 0,
-      );
-    });
-
+    /* Keep the final HTML values readable until the animation actually starts. */
     if (prefersReducedMotionForCounters) {
       runMoneySequence();
       return;
@@ -140,20 +135,17 @@ export function initPriceAnchor() {
         const entry = entries[0];
         if (!entry?.isIntersecting) return;
 
-        /*
-        threshold + rootMargin hacen que no arranque apenas roce el viewport:
-        el usuario ya debe haber llegado visualmente a la zona.
-      */
+        /* Observe the figures, not the potentially tall text section. */
         runMoneySequence();
         observer.disconnect();
       },
       {
-        threshold: 0.38,
+        threshold: 0,
         rootMargin: "0px 0px -8% 0px",
       },
     );
 
-    observer.observe(anchorSection);
+    observer.observe(moneyFigures[0] || anchorSection);
   }
 
   initMoneyCounters();

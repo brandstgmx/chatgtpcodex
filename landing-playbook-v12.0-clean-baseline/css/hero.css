@@ -261,10 +261,10 @@
   overflow: visible;
 }
 .js [data-hero-item] {
-  opacity: 0;
+  opacity: 1;
 }
 .js.is-ready [data-hero-item] {
-  animation: heroReveal 860ms var(--ease-out) both;
+  animation: heroReveal 860ms var(--ease-out) backwards;
   animation-delay: calc(420ms + (var(--hero-index, 0) * 58ms));
 }
 @keyframes heroReveal {

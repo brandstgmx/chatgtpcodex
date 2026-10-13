@@ -128,6 +128,8 @@ canvas {
   top: 10px;
   left: 10px;
   transform: translateY(-160%);
+  opacity: 0;
+  pointer-events: none;
   padding: 10px 14px;
   border-radius: 12px;
   background: var(--black);
@@ -136,6 +138,8 @@ canvas {
 }
 .skip-link:focus {
   transform: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .desktop-nav {
@@ -406,23 +410,22 @@ a:focus-visible {
   font-size: 0.74rem;
   text-align: center;
 }
+/* Reading content remains visible if an entrance animation is interrupted. */
 .js [data-reveal] {
-  opacity: 0;
+  opacity: 1;
 }
 [data-reveal].is-visible {
-  animation: sectionReveal 860ms var(--ease-out) both;
+  animation: sectionReveal 420ms var(--ease-out) backwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
 @keyframes sectionReveal {
   from {
-    opacity: 0;
-    filter: blur(8px);
-    transform: translate3d(0, 18px, 0) scale(0.985);
+    opacity: 0.75;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: none;
   }
 }
 @media (max-width: 900px) {

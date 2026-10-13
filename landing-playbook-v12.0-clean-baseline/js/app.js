@@ -381,8 +381,10 @@
         canvas.style.height = `${state.height}px`;
         ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
       }, drawDots = function(time) {
+        raf = 0;
+        if (!state.visible || document.hidden) return;
         raf = requestAnimationFrame(drawDots);
-        if (!state.visible || time - lastFrame < 33) return;
+        if (time - lastFrame < 33) return;
         lastFrame = time;
         const w = state.width;
         const h = state.height;
@@ -445,8 +447,17 @@
             ctx.fill();
           }
         }
+      }, updateCanvasActivity = function() {
+        const rect = hero.getBoundingClientRect();
+        state.visible = !document.hidden && rect.bottom > 0 && rect.top < window.innerHeight;
+        if (state.visible && !raf) raf = requestAnimationFrame(drawDots);
+        else if (!state.visible && raf) {
+          cancelAnimationFrame(raf);
+          raf = 0;
+        }
       };
       const ctx = canvas.getContext("2d", { alpha: true });
+      if (!ctx) return;
       const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
       const state = {
         width: 0,
@@ -485,11 +496,15 @@
       if ("IntersectionObserver" in window) {
         const heroObserver = new IntersectionObserver(
           (entries) => {
-            state.visible = entries[0]?.isIntersecting ?? true;
+            updateCanvasActivity();
           },
           { threshold: 0 }
         );
         heroObserver.observe(hero);
+      } else {
+        window.addEventListener("scroll", updateCanvasActivity, {
+          passive: true
+        });
       }
       if ("ResizeObserver" in window) {
         new ResizeObserver(resizeCanvas).observe(hero);
@@ -497,10 +512,10 @@
         window.addEventListener("resize", resizeCanvas, { passive: true });
       }
       document.addEventListener("visibilitychange", () => {
-        state.visible = !document.hidden && hero.getBoundingClientRect().bottom > 0;
+        updateCanvasActivity();
       });
       resizeCanvas();
-      raf = requestAnimationFrame(drawDots);
+      updateCanvasActivity();
       window.addEventListener("pagehide", () => {
         cancelAnimationFrame(raf);
         raf = 0;
@@ -508,7 +523,7 @@
       window.addEventListener("pageshow", () => {
         if (!raf) {
           resizeCanvas();
-          raf = requestAnimationFrame(drawDots);
+          updateCanvasActivity();
         }
       });
     }
@@ -538,7 +553,7 @@
             observer.unobserve(entry.target);
           });
         },
-        { rootMargin: "0px 0px -6% 0px", threshold: 0.12 }
+        { rootMargin: "0px 0px 48px 0px", threshold: 0 }
       );
       revealNodes.forEach((node) => revealObserver.observe(node));
     }
@@ -841,22 +856,18 @@
         });
         return;
       }
+      firstCounter.textContent = "0";
       revealMoneyNode(firstFigure);
       await animateMoneyCounter(firstCounter, 1100);
       await wait(180);
       revealMoneyNode(moneySeparator);
       await wait(260);
+      secondCounter.textContent = "0";
       revealMoneyNode(secondFigure);
       await animateMoneyCounter(secondCounter, 1250);
     }
     function initMoneyCounters() {
       if (moneyCounterElements.length < 2) return;
-      moneyCounterElements.forEach((element) => {
-        const target = Number(element.dataset.moneyCounter || "0");
-        element.textContent = formatMoneyCounter(
-          prefersReducedMotionForCounters ? target : 0
-        );
-      });
       if (prefersReducedMotionForCounters) {
         runMoneySequence();
         return;
@@ -875,11 +886,11 @@
           observer.disconnect();
         },
         {
-          threshold: 0.38,
+          threshold: 0,
           rootMargin: "0px 0px -8% 0px"
         }
       );
-      observer.observe(anchorSection);
+      observer.observe(moneyFigures[0] || anchorSection);
     }
     initMoneyCounters();
   }
@@ -1086,11 +1097,23 @@
           isExpanding = false;
           animation = null;
         };
+        const cancelCurrent = () => {
+          if (!animation) return;
+          animation.onfinish = null;
+          animation.oncancel = null;
+          animation.cancel();
+          animation = null;
+          isClosing = false;
+          isExpanding = false;
+          details.classList.remove("is-closing");
+        };
         const close = () => {
-          animation?.cancel();
+          const startHeight = `${answer.getBoundingClientRect().height}px`;
+          cancelCurrent();
+          answer.style.height = startHeight;
+          answer.style.opacity = "1";
           isClosing = true;
           details.classList.add("is-closing");
-          const startHeight = `${answer.getBoundingClientRect().height}px`;
           animation = answer.animate(
             [
               { height: startHeight, opacity: 1 },
@@ -1108,16 +1131,17 @@
           animation.oncancel = cleanup;
         };
         const open = () => {
-          animation?.cancel();
+          const startHeight = details.open ? answer.getBoundingClientRect().height : 0;
+          cancelCurrent();
           isExpanding = true;
           details.open = true;
           answer.style.height = "auto";
           const endHeight = `${answer.getBoundingClientRect().height}px`;
-          answer.style.height = "0px";
-          answer.style.opacity = "0";
+          answer.style.height = `${startHeight}px`;
+          answer.style.opacity = startHeight > 0 ? "1" : "0";
           animation = answer.animate(
             [
-              { height: "0px", opacity: 0 },
+              { height: `${startHeight}px`, opacity: startHeight > 0 ? 1 : 0 },
               { height: endHeight, opacity: 1 }
             ],
             {
@@ -1128,6 +1152,15 @@
           animation.onfinish = cleanup;
           animation.oncancel = cleanup;
         };
+        const settle = () => {
+          if (!animation) return;
+          const shouldRemainOpen = !isClosing;
+          cancelCurrent();
+          details.open = shouldRemainOpen;
+          cleanup();
+        };
+        window.addEventListener("pagehide", settle);
+        window.addEventListener("resize", settle);
         summary.addEventListener("click", (event) => {
           event.preventDefault();
           if (isClosing || !details.open && !isExpanding) {

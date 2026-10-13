@@ -35,11 +35,24 @@ export function initFaq() {
         animation = null;
       };
 
+      const cancelCurrent = () => {
+        if (!animation) return;
+        animation.onfinish = null;
+        animation.oncancel = null;
+        animation.cancel();
+        animation = null;
+        isClosing = false;
+        isExpanding = false;
+        details.classList.remove("is-closing");
+      };
+
       const close = () => {
-        animation?.cancel();
+        const startHeight = `${answer.getBoundingClientRect().height}px`;
+        cancelCurrent();
+        answer.style.height = startHeight;
+        answer.style.opacity = "1";
         isClosing = true;
         details.classList.add("is-closing");
-        const startHeight = `${answer.getBoundingClientRect().height}px`;
 
         animation = answer.animate(
           [
@@ -60,18 +73,21 @@ export function initFaq() {
       };
 
       const open = () => {
-        animation?.cancel();
+        const startHeight = details.open
+          ? answer.getBoundingClientRect().height
+          : 0;
+        cancelCurrent();
         isExpanding = true;
         details.open = true;
 
         answer.style.height = "auto";
         const endHeight = `${answer.getBoundingClientRect().height}px`;
-        answer.style.height = "0px";
-        answer.style.opacity = "0";
+        answer.style.height = `${startHeight}px`;
+        answer.style.opacity = startHeight > 0 ? "1" : "0";
 
         animation = answer.animate(
           [
-            { height: "0px", opacity: 0 },
+            { height: `${startHeight}px`, opacity: startHeight > 0 ? 1 : 0 },
             { height: endHeight, opacity: 1 },
           ],
           {
@@ -83,6 +99,16 @@ export function initFaq() {
         animation.onfinish = cleanup;
         animation.oncancel = cleanup;
       };
+
+      const settle = () => {
+        if (!animation) return;
+        const shouldRemainOpen = !isClosing;
+        cancelCurrent();
+        details.open = shouldRemainOpen;
+        cleanup();
+      };
+      window.addEventListener("pagehide", settle);
+      window.addEventListener("resize", settle);
 
       summary.addEventListener("click", (event) => {
         event.preventDefault();

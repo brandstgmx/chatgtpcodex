@@ -9,7 +9,8 @@
     "build:check": "node build.cjs --check",
     "test:animations": "node animations.cjs && node local-compatible.cjs",
     "test:offer": "node offer-update.cjs",
-    "test:design": "node compact-urgency.cjs && node sticky.cjs"
+    "test:design": "node compact-urgency.cjs && node sticky.cjs",
+    "test:scroll": "node scroll-audit.cjs && node canvas-lifecycle.cjs && node faq-lifecycle.cjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

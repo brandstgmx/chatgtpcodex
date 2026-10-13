@@ -1,0 +1,11 @@
+{
+  "started": 29,
+  "stopped": 30,
+  "stoppedLater": 30,
+  "resumed": 45,
+  "hidden": 46,
+  "hiddenLater": 46,
+  "restored": 64,
+  "errors": [],
+  "pass": true
+}

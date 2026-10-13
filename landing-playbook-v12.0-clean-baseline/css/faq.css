@@ -7,6 +7,7 @@
 }
 .purchase-faq summary {
   min-height: 52px;
+  padding-right: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,7 +74,7 @@
 }
 
 .purchase-faq .faq-answer p {
-  margin: -2px 40px 16px 0;
+  margin: 0 40px 16px 0;
   color: #6f7484;
   font-size: 0.84rem;
   line-height: 1.55;

@@ -1082,3 +1082,22 @@
   display: none !important;
   animation: none !important;
 }
+
+/* Keep all six payment marks inside the actual column, even at 320px. */
+.payment-stack .payment-methods {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(3px, 1vw, 7px);
+}
+.payment-methods > .payment-badge {
+  width: 100%;
+  min-width: 0;
+  max-width: 58px;
+  padding-inline: clamp(3px, .6vw, 6px);
+  justify-self: center;
+}
+.payment-methods > .payment-badge svg {
+  max-width: 100%;
+  object-fit: contain;
+}

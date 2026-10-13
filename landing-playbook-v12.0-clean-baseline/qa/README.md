@@ -73,3 +73,9 @@ Edita los módulos fuente y `js/bootstrap.js`; `js/app.js` es el bundle generado
 ### Revisión visual autorizada: urgencia compacta
 
 `npm run test:design` comprueba la franja integrada en las ocho resoluciones, expiración sin cambios de altura, contraste/configuración visual y sticky móvil con CTA, reaparición y ocultamiento en tablet. Las comparaciones históricas contra V11.46 documentan el refactor previo; el nuevo diseño de los componentes de urgencia fue solicitado después por el usuario.
+
+### Auditoría de fluidez
+
+`npm run test:scroll` comprueba scroll rápido, visibilidad durante el desplazamiento, texto no recortado, las FAQ abiertas, ancho de logos de pago, animaciones interrumpidas, orientación, cambio de movimiento reducido, altura estable al intentar llegar al final y texto al 300% en un viewport de poca altura. También verifica detención/reactivación del canvas y transiciones FAQ interrumpidas.
+
+Motor disponible: Chromium. El intento de instalar WebKit fue bloqueado por la red con HTTP 403 «Domain forbidden»; estos resultados no equivalen a una prueba en Safari real.

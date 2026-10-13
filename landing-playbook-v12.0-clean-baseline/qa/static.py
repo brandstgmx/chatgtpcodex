@@ -9,6 +9,7 @@ s=BeautifulSoup((clean/'index.html').read_text(),'html.parser');old=BeautifulSou
 # Baseline preserved except the invisible span and user-authorized price update.
 expected=(base/'index.html').read_text().replace('              <span class="purchase-shine" aria-hidden="true"></span>\n','')
 expected=expected.replace('$179','$349').replace('$499','$999').replace('"price": "179"','"price": "349"').replace('Precio especial 179 pesos','Precio especial 349 pesos').replace('data-d="1"','data-d="3"').replace('data-d="7"','data-d="4"')
+expected=expected.replace('https://lanzatufranquicia.com/img/og-playbook.jpg','https://lanzatufranquicia.com/img/embedded-3.png').replace('property="og:image:width" content="1200"','property="og:image:width" content="1346"').replace('property="og:image:height" content="630"','property="og:image:height" content="1920"').replace('property="og:image:type" content="image/jpeg"','property="og:image:type" content="image/png"')
 actual=(clean/'index.html').read_text().replace('<span aria-hidden="true" class="offer-status__dot"></span>', '<span aria-hidden="true">✨</span>')
 def remove_authorized_sticky(html):
  return re.sub(r'<!-- Mobile sticky conversion bar -->.*?(?=<footer)', '', html, flags=re.S)

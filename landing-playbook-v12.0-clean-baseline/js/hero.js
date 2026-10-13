@@ -27,6 +27,7 @@ export function initHero() {
 
   if (canvas && hero && !prefersReducedMotion) {
     const ctx = canvas.getContext("2d", { alpha: true });
+    if (!ctx) return;
     const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
     const state = {
       width: 0,
@@ -63,8 +64,10 @@ export function initHero() {
     }
 
     function drawDots(time) {
+      raf = 0;
+      if (!state.visible || document.hidden) return;
       raf = requestAnimationFrame(drawDots);
-      if (!state.visible || time - lastFrame < 33) return;
+      if (time - lastFrame < 33) return;
       lastFrame = time;
 
       const w = state.width;
@@ -179,14 +182,29 @@ export function initHero() {
       );
     }
 
+    function updateCanvasActivity() {
+      const rect = hero.getBoundingClientRect();
+      state.visible =
+        !document.hidden && rect.bottom > 0 && rect.top < window.innerHeight;
+      if (state.visible && !raf) raf = requestAnimationFrame(drawDots);
+      else if (!state.visible && raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    }
+
     if ("IntersectionObserver" in window) {
       const heroObserver = new IntersectionObserver(
         (entries) => {
-          state.visible = entries[0]?.isIntersecting ?? true;
+          updateCanvasActivity();
         },
         { threshold: 0 },
       );
       heroObserver.observe(hero);
+    } else {
+      window.addEventListener("scroll", updateCanvasActivity, {
+        passive: true,
+      });
     }
 
     if ("ResizeObserver" in window) {
@@ -196,12 +214,11 @@ export function initHero() {
     }
 
     document.addEventListener("visibilitychange", () => {
-      state.visible =
-        !document.hidden && hero.getBoundingClientRect().bottom > 0;
+      updateCanvasActivity();
     });
 
     resizeCanvas();
-    raf = requestAnimationFrame(drawDots);
+    updateCanvasActivity();
     window.addEventListener("pagehide", () => {
       cancelAnimationFrame(raf);
       raf = 0;
@@ -209,7 +226,7 @@ export function initHero() {
     window.addEventListener("pageshow", () => {
       if (!raf) {
         resizeCanvas();
-        raf = requestAnimationFrame(drawDots);
+        updateCanvasActivity();
       }
     });
   }

@@ -26,7 +26,7 @@ export function initDecisionProof() {
           observer.unobserve(entry.target);
         });
       },
-      { rootMargin: "0px 0px -6% 0px", threshold: 0.12 },
+      { rootMargin: "0px 0px 48px 0px", threshold: 0 },
     );
 
     revealNodes.forEach((node) => revealObserver.observe(node));

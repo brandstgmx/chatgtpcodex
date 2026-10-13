@@ -57,3 +57,15 @@ A petición explícita del usuario, la propuesta dejó de estar limitada a la de
 - Sticky móvil: franja dentro de la superficie fija, en la primera fila; precio real $999 pequeño y tachado, precio actual $349 y botón de compra en la segunda fila. Se eliminó el espacio vacío reservado a la cápsula flotante.
 - Pulse suave (escala máxima 1.1, 320 ms) desde el inicio de los cinco minutos. Se respeta movimiento reducido y la expiración persistida.
 - Se reemplazaron las reglas históricas de los dos componentes por CSS consolidado. Se retiró el brillo del CTA sticky. El resto de la landing conserva su composición.
+
+## Auditoría de contenido visible y fluidez móvil
+
+- Corregido el estado invisible permanente cuando una animación de entrada se cancelaba: el contenido tiene opacidad 1 por defecto y las animaciones no retienen blur/transform al terminar.
+- Reveals activados por entrada en pantalla, sin exigir un porcentaje de visibilidad de una tarjeta que puede superar la altura del dispositivo.
+- Conservado íntegramente el párrafo «Por $349 MXN obtienes el criterio…»; precio y moneda integrados como texto inline, con interlineado móvil más legible.
+- Contadores de consultoría observan la primera cifra, en lugar de toda la sección. Los valores finales son legibles antes de iniciar la animación.
+- Métodos de pago en seis columnas flexibles dentro del ancho real del box; se corrige el desborde de los badges con ancho fijo en móvil/tablet.
+- FAQ: callbacks de animaciones canceladas ya no alteran una nueva transición; respuesta recuperada al cambiar de tamaño o salir de la página. Se evita recortar el icono de apertura.
+- Canvas del hero detiene frames fuera del viewport y cuando la pestaña queda oculta; vuelve a funcionar al regresar.
+- Open Graph/Twitter/JSON-LD apuntan a la portada PNG incluida, con dimensiones reales, en vez de a un JPG ausente del paquete.
+- Permanecen el precio real $999, precio especial $349, reel al llegar al precio, sticky compacto y timer persistente de cinco minutos con pulse.

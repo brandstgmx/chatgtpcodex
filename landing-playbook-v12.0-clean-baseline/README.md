@@ -23,3 +23,7 @@ Precio real: **$999 MXN**. Precio especial: **$349 MXN**. El reel se activa al e
 ### Diseño compacto integrado
 
 La franja ámbar discreta está implementada en la web final, encima del CTA del pricing y dentro del sticky móvil. La demo incluida es solo un ejemplo adicional; no es necesaria para ver el nuevo diseño en `index.html`.
+
+### Auditoría de lectura y scroll móvil
+
+Las secciones permanecen legibles si se interrumpe una animación. El texto del precio mantiene el copy original; se mejoró su interlineado y los seis logos de pago caben dentro del box. Las FAQ recuperan el contenido tras clicks rápidos, cambios de orientación y salida de la página. La auditoría reproducible está en `qa/scroll-audit.cjs`, `qa/faq-lifecycle.cjs` y `qa/canvas-lifecycle.cjs`.
