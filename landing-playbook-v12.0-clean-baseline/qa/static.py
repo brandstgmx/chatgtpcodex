@@ -1,4 +1,4 @@
-import sys,json,hashlib,os
+import sys,json,hashlib,os,re
 from pathlib import Path
 import html5lib,tinycss2
 from bs4 import BeautifulSoup
@@ -9,7 +9,10 @@ s=BeautifulSoup((clean/'index.html').read_text(),'html.parser');old=BeautifulSou
 # Baseline preserved except the invisible span and user-authorized price update.
 expected=(base/'index.html').read_text().replace('              <span class="purchase-shine" aria-hidden="true"></span>\n','')
 expected=expected.replace('$179','$349').replace('$499','$999').replace('"price": "179"','"price": "349"').replace('Precio especial 179 pesos','Precio especial 349 pesos').replace('data-d="1"','data-d="3"').replace('data-d="7"','data-d="4"')
-results['html_only_authorized_changes']=expected==(clean/'index.html').read_text()
+actual=(clean/'index.html').read_text().replace('<span aria-hidden="true" class="offer-status__dot"></span>', '<span aria-hidden="true">✨</span>')
+def remove_authorized_sticky(html):
+ return re.sub(r'<!-- Mobile sticky conversion bar -->.*?(?=<footer)', '', html, flags=re.S)
+results['html_only_authorized_changes']=remove_authorized_sticky(expected)==remove_authorized_sticky(actual)
 results['ids_unique']=len(s.select('[id]'))==len({x['id'] for x in s.select('[id]')});results['body_children']=s.footer.parent.name=='body' and s.select_one('[data-mobile-offer-bar]').parent.name=='body'
 results['assets_identical']=all(hashlib.sha256(f.read_bytes()).digest()==hashlib.sha256((clean/f.relative_to(base)).read_bytes()).digest() for f in [*(base/'img').glob('*'),base/'robots.txt',base/'sitemap.xml'])
 manifest=json.loads((base/'SOURCE_SHA256.json').read_text());results['baseline_checksums']=all(hashlib.sha256((base/name).read_bytes()).hexdigest()==sha for name,sha in manifest.items())

@@ -1,0 +1,242 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "sticky": {
+      "mobile": true,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.97296142578125
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.99102783203125
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "sticky": {
+      "mobile": true,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.9766845703125
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.9964599609375
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "sticky": {
+      "mobile": true,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.9639892578125
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.972900390625
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "sticky": {
+      "mobile": false,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.95849609375
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.968719482421875
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "sticky": {
+      "mobile": false,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.952239990234375
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.972930908203125
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "sticky": {
+      "mobile": false,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.93707275390625
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.97991943359375
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "sticky": {
+      "mobile": false,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.95220947265625
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.968719482421875
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "sticky": {
+      "mobile": false,
+      "nested": true,
+      "inside": true,
+      "compact": true,
+      "position": "static",
+      "price": "$349"
+    },
+    "active": {
+      "background": "rgb(255, 245, 233)",
+      "image": "none",
+      "radius": "10px",
+      "shadow": "none",
+      "fit": true,
+      "height": 41.937103271484375
+    },
+    "expired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento",
+      "height": 41.95843505859375
+    },
+    "mobileExpired": {
+      "visible": true,
+      "text": "✨ Precio de lanzamiento"
+    },
+    "pass": true
+  }
+]

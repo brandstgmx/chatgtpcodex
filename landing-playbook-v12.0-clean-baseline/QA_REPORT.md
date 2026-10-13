@@ -97,3 +97,11 @@ Solicitud posterior del usuario: $999 → $349, pulse desde el inicio de los cin
 También pasó `qa/advanced.cjs`: duración exacta 300000 ms, un pulse por cambio de segundo, expiración exacta sin reinicio, almacenamiento persistente y fallback, movimiento reducido e integraciones con fixtures. HTML/CSS parsean sin errores y la comparación estática permite exclusivamente los precios autorizados y los cambios técnicos anteriores. El bundle coincide con sus fuentes.
 
 Los informes visuales y demás archivos de evidencia previos corresponden a las revisiones históricas indicadas; no se presentan como una nueva comparación visual de los precios actuales. La demo compacta es independiente de la composición del sitio.
+
+## Diseño compacto integrado en producción
+
+La propuesta visual está implementada en la landing final, no solo en la demo. Pricing y sticky comparten la franja ámbar, sin cápsula secundaria ni resplandor naranja; el sticky contiene la franja y el precio $349 en su propia superficie fija. Los segundos pulsan suavemente desde el inicio (escala 1.1, 320 ms) y se mantiene la expiración de cinco minutos sin reinicio.
+
+Validación: `compact-urgency.cjs` pasó las ocho resoluciones, verificando estilos de la franja, contenido dentro de sus límites, integración y altura del sticky, precios y texto al vencer. El estado activo y expirado mantienen la misma altura. `offer-update.cjs` pasó nuevamente en las ocho resoluciones con el diseño integrado. `sticky.cjs` pasó los tres tamaños móviles: franja visible y contenida en la barra (<140 px), interacción fuera de la superficie, CTA con evento único, ocultamiento al llegar a compra, ocultamiento en tablet y recuperación al volver a móvil.
+
+`runtime.cjs` pasó 249/249 comprobaciones en las ocho resoluciones: scroll/altura estables, sticky fijo, ocultamiento en compra/footer, contador persistente y sincronizado, intervalos, BFCache, expiración, reel final $349 y cero errores de consola. HTML y CSS parsean sin errores; la comparación estática conserva lo ajeno a los precios y componentes autorizados. El bundle sigue coincidiendo con sus fuentes. Evidencias nuevas: `compact-urgency.json`, `offer-update.json`, `runtime.json`, `sticky.json`, `static.json` y capturas `integrated-*.png`.

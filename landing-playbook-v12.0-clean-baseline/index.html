@@ -294,7 +294,7 @@
             <div class="purchase-col__inner">
             <div aria-label="Estado de la oferta" class="offer-status is-initializing" data-offer-status="">
               <div class="offer-status__active" data-offer-active="" hidden="">
-                <span class="offer-status__label"><span aria-hidden="true">✨</span> Oferta termina en</span>
+                <span class="offer-status__label"><span aria-hidden="true" class="offer-status__dot"></span> Oferta termina en</span>
                 <time aria-label="Tiempo restante de la oferta" class="offer-countdown" data-offer-countdown="" datetime="PT5M">
                   <span class="offer-countdown__prefix" data-offer-countdown-prefix>05</span><span class="offer-countdown__separator">:</span><span class="offer-countdown__seconds" data-offer-countdown-seconds>00</span>
                 </time>
@@ -415,25 +415,20 @@
 
 <!-- Mobile sticky conversion bar -->
 <div class="mobile-offer-bar" data-mobile-offer-bar aria-hidden="true">
-  <div class="mobile-offer-bar__capsule" aria-live="polite">
-    <span data-mobile-offer-active>
-      <span aria-hidden="true">✨</span>
-      <span class="mobile-offer-bar__label">Oferta de lanzamiento</span>
-      <span class="mobile-offer-bar__countdown" data-mobile-offer-countdown aria-label="Tiempo restante de la oferta">
-        <span data-mobile-offer-prefix>05</span><span aria-hidden="true">:</span><span class="mobile-offer-bar__seconds" data-mobile-offer-seconds>00</span>
-      </span>
-    </span>
-    <span data-mobile-offer-expired hidden>
-      <span aria-hidden="true">✨</span> Oferta de lanzamiento
-    </span>
-  </div>
   <div class="mobile-offer-bar__inner mobile-offer-bar__inner--simple">
-    <div class="mobile-offer-bar__price" aria-label="Precio real de la guía">
-      <span class="mobile-offer-bar__price-label">Precio real</span>
-      <span class="mobile-offer-bar__price-row">
-        <span class="mobile-offer-bar__price-old">$999</span>
-        <small>MXN</small>
+    <div class="mobile-offer-bar__capsule">
+      <span data-mobile-offer-active>
+        <span aria-hidden="true" class="offer-status__dot"></span>
+        <span class="mobile-offer-bar__label">Oferta termina en</span>
+        <span class="mobile-offer-bar__countdown" data-mobile-offer-countdown aria-label="Tiempo restante de la oferta">
+          <span data-mobile-offer-prefix>05</span><span aria-hidden="true">:</span><span class="mobile-offer-bar__seconds" data-mobile-offer-seconds>00</span>
+        </span>
       </span>
+      <span data-mobile-offer-expired hidden role="status"><span aria-hidden="true">✨</span> Precio de lanzamiento</span>
+    </div>
+    <div class="mobile-offer-bar__price" aria-label="Precio especial 349 pesos mexicanos, precio real 999 pesos mexicanos">
+      <span class="mobile-offer-bar__price-row"><span class="mobile-offer-bar__price-old">$999</span><small>MXN</small></span>
+      <span class="mobile-offer-bar__price-current">$349</span>
     </div>
     <a class="mobile-offer-bar__cta" href="#oferta" data-checkout-link data-cta-location="sticky-mobile">Comprar por $349 <span aria-hidden="true">↗</span></a>
   </div>

@@ -69,3 +69,7 @@ npm run build:check
 Edita los módulos fuente y `js/bootstrap.js`; `js/app.js` es el bundle generado. La compilación no cambia el diseño, las duraciones ni el copy.
 
 `animations.cjs` verifica movimiento intermedio y timings de números, sticky y timer en los ocho viewports. `local-compatible.cjs` verifica la carga autocontenida en origen opaco y sin storage.
+
+### Revisión visual autorizada: urgencia compacta
+
+`npm run test:design` comprueba la franja integrada en las ocho resoluciones, expiración sin cambios de altura, contraste/configuración visual y sticky móvil con CTA, reaparición y ocultamiento en tablet. Las comparaciones históricas contra V11.46 documentan el refactor previo; el nuevo diseño de los componentes de urgencia fue solicitado después por el usuario.

@@ -19,3 +19,7 @@ Consulta `QA_REPORT.md`, `CHANGELOG_REFACTOR.md` y `qa/README.md` para resultado
 ### Precios actuales
 
 Precio real: **$999 MXN**. Precio especial: **$349 MXN**. El reel se activa al entrar el precio en pantalla y termina en $349. Los segundos de ambas píldoras pulsan durante los cinco minutos completos, salvo con movimiento reducido.
+
+### Diseño compacto integrado
+
+La franja ámbar discreta está implementada en la web final, encima del CTA del pricing y dentro del sticky móvil. La demo incluida es solo un ejemplo adicional; no es necesaria para ver el nuevo diseño en `index.html`.

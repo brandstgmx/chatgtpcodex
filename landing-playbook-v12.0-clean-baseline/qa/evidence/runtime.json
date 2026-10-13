@@ -32,20 +32,20 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 633,
+            "top": 671.5,
             "bottom": 800,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 661,
-            "bottom": 695,
-            "width": 203.265625
+            "top": 686.5,
+            "bottom": 724,
+            "width": 326
           },
           "hit": true
         }
       },
       {
-        "name": "orange capsule painted",
+        "name": "integrated urgency strip painted",
         "pass": true,
         "detail": {
           "visible": true,
@@ -53,14 +53,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 633,
+            "top": 671.5,
             "bottom": 800,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 661,
-            "bottom": 695,
-            "width": 203.265625
+            "top": 686.5,
+            "bottom": 724,
+            "width": 326
           },
           "hit": true
         }
@@ -74,14 +74,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 633,
+            "top": 671.5,
             "bottom": 800,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 661,
-            "bottom": 695,
-            "width": 203.265625
+            "top": 686.5,
+            "bottom": 724,
+            "width": 326
           },
           "hit": true
         }
@@ -90,8 +90,8 @@
         "name": "sticky does not change document height",
         "pass": true,
         "detail": {
-          "h": 3127,
-          "hRemoved": 3127
+          "h": 3119,
+          "hRemoved": 3119
         }
       },
       {
@@ -107,7 +107,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -167,362 +167,362 @@
         "pass": true,
         "detail": [
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           },
           {
-            "scrollHeight": 3122,
+            "scrollHeight": 3117,
             "clientHeight": 800,
-            "footerBottom": 3122.15625,
-            "scrollY": 2322,
+            "footerBottom": 3117.15625,
+            "scrollY": 2317,
             "scrollWidth": 360,
             "clientWidth": 360
           }
@@ -532,10 +532,10 @@
         "name": "footer is real document end",
         "pass": true,
         "detail": {
-          "scrollHeight": 3122,
+          "scrollHeight": 3117,
           "clientHeight": 800,
-          "footerBottom": 3122.15625,
-          "scrollY": 2322,
+          "footerBottom": 3117.15625,
+          "scrollY": 2317,
           "scrollWidth": 360,
           "clientWidth": 360
         }
@@ -563,10 +563,10 @@
       }
     ],
     "geometry": {
-      "scrollHeight": 3122,
+      "scrollHeight": 3117,
       "clientHeight": 800,
-      "footerBottom": 3122.15625,
-      "scrollY": 2322,
+      "footerBottom": 3117.15625,
+      "scrollY": 2317,
       "scrollWidth": 360,
       "clientWidth": 360
     },
@@ -576,14 +576,14 @@
       "bottom": "0px",
       "contain": "paint",
       "rect": {
-        "top": 633,
+        "top": 671.5,
         "bottom": 800,
-        "height": 167
+        "height": 128.5
       },
       "capsule": {
-        "top": 661,
-        "bottom": 695,
-        "width": 203.265625
+        "top": 686.5,
+        "bottom": 724,
+        "width": 326
       },
       "hit": true
     },
@@ -622,20 +622,20 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 677,
+            "top": 715.5,
             "bottom": 844,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 705,
-            "bottom": 739,
-            "width": 203.265625
+            "top": 730.5,
+            "bottom": 768,
+            "width": 356
           },
           "hit": true
         }
       },
       {
-        "name": "orange capsule painted",
+        "name": "integrated urgency strip painted",
         "pass": true,
         "detail": {
           "visible": true,
@@ -643,14 +643,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 677,
+            "top": 715.5,
             "bottom": 844,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 705,
-            "bottom": 739,
-            "width": 203.265625
+            "top": 730.5,
+            "bottom": 768,
+            "width": 356
           },
           "hit": true
         }
@@ -664,14 +664,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 677,
+            "top": 715.5,
             "bottom": 844,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 705,
-            "bottom": 739,
-            "width": 203.265625
+            "top": 730.5,
+            "bottom": 768,
+            "width": 356
           },
           "hit": true
         }
@@ -680,8 +680,8 @@
         "name": "sticky does not change document height",
         "pass": true,
         "detail": {
-          "h": 3252,
-          "hRemoved": 3252
+          "h": 3244,
+          "hRemoved": 3244
         }
       },
       {
@@ -697,7 +697,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -757,362 +757,362 @@
         "pass": true,
         "detail": [
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           },
           {
-            "scrollHeight": 3247,
+            "scrollHeight": 3242,
             "clientHeight": 844,
-            "footerBottom": 3247.359375,
-            "scrollY": 2403,
+            "footerBottom": 3242.359375,
+            "scrollY": 2398,
             "scrollWidth": 390,
             "clientWidth": 390
           }
@@ -1122,10 +1122,10 @@
         "name": "footer is real document end",
         "pass": true,
         "detail": {
-          "scrollHeight": 3247,
+          "scrollHeight": 3242,
           "clientHeight": 844,
-          "footerBottom": 3247.359375,
-          "scrollY": 2403,
+          "footerBottom": 3242.359375,
+          "scrollY": 2398,
           "scrollWidth": 390,
           "clientWidth": 390
         }
@@ -1153,10 +1153,10 @@
       }
     ],
     "geometry": {
-      "scrollHeight": 3247,
+      "scrollHeight": 3242,
       "clientHeight": 844,
-      "footerBottom": 3247.359375,
-      "scrollY": 2403,
+      "footerBottom": 3242.359375,
+      "scrollY": 2398,
       "scrollWidth": 390,
       "clientWidth": 390
     },
@@ -1166,14 +1166,14 @@
       "bottom": "0px",
       "contain": "paint",
       "rect": {
-        "top": 677,
+        "top": 715.5,
         "bottom": 844,
-        "height": 167
+        "height": 128.5
       },
       "capsule": {
-        "top": 705,
-        "bottom": 739,
-        "width": 203.265625
+        "top": 730.5,
+        "bottom": 768,
+        "width": 356
       },
       "hit": true
     },
@@ -1212,20 +1212,20 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 765,
+            "top": 803.5,
             "bottom": 932,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 793,
-            "bottom": 827,
-            "width": 217.890625
+            "top": 818.5,
+            "bottom": 856,
+            "width": 396
           },
           "hit": true
         }
       },
       {
-        "name": "orange capsule painted",
+        "name": "integrated urgency strip painted",
         "pass": true,
         "detail": {
           "visible": true,
@@ -1233,14 +1233,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 765,
+            "top": 803.5,
             "bottom": 932,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 793,
-            "bottom": 827,
-            "width": 217.890625
+            "top": 818.5,
+            "bottom": 856,
+            "width": 396
           },
           "hit": true
         }
@@ -1254,14 +1254,14 @@
           "bottom": "0px",
           "contain": "paint",
           "rect": {
-            "top": 765,
+            "top": 803.5,
             "bottom": 932,
-            "height": 167
+            "height": 128.5
           },
           "capsule": {
-            "top": 793,
-            "bottom": 827,
-            "width": 217.890625
+            "top": 818.5,
+            "bottom": 856,
+            "width": 396
           },
           "hit": true
         }
@@ -1270,8 +1270,8 @@
         "name": "sticky does not change document height",
         "pass": true,
         "detail": {
-          "h": 3352,
-          "hRemoved": 3352
+          "h": 3343,
+          "hRemoved": 3343
         }
       },
       {
@@ -1287,7 +1287,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -1347,362 +1347,362 @@
         "pass": true,
         "detail": [
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           },
           {
-            "scrollHeight": 3347,
+            "scrollHeight": 3342,
             "clientHeight": 932,
-            "footerBottom": 3346.515625,
-            "scrollY": 2415,
+            "footerBottom": 3341.515625,
+            "scrollY": 2410,
             "scrollWidth": 430,
             "clientWidth": 430
           }
@@ -1712,10 +1712,10 @@
         "name": "footer is real document end",
         "pass": true,
         "detail": {
-          "scrollHeight": 3347,
+          "scrollHeight": 3342,
           "clientHeight": 932,
-          "footerBottom": 3346.515625,
-          "scrollY": 2415,
+          "footerBottom": 3341.515625,
+          "scrollY": 2410,
           "scrollWidth": 430,
           "clientWidth": 430
         }
@@ -1743,10 +1743,10 @@
       }
     ],
     "geometry": {
-      "scrollHeight": 3347,
+      "scrollHeight": 3342,
       "clientHeight": 932,
-      "footerBottom": 3346.515625,
-      "scrollY": 2415,
+      "footerBottom": 3341.515625,
+      "scrollY": 2410,
       "scrollWidth": 430,
       "clientWidth": 430
     },
@@ -1756,14 +1756,14 @@
       "bottom": "0px",
       "contain": "paint",
       "rect": {
-        "top": 765,
+        "top": 803.5,
         "bottom": 932,
-        "height": 167
+        "height": 128.5
       },
       "capsule": {
-        "top": 793,
-        "bottom": 827,
-        "width": 217.890625
+        "top": 818.5,
+        "bottom": 856,
+        "width": 396
       },
       "hit": true
     },
@@ -1827,7 +1827,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -2367,7 +2367,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -2907,7 +2907,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -3447,7 +3447,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {
@@ -3987,7 +3987,7 @@
         "pass": true
       },
       {
-        "name": "reel ends at 179",
+        "name": "reel ends at 349",
         "pass": true
       },
       {

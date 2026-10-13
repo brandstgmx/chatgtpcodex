@@ -48,3 +48,12 @@ Comparación con el archivo V11.45 adjuntado: su `js/app.js` es idéntico al del
 - Las dos píldoras pulsan en cada cambio de segundo desde el inicio de los cinco minutos; respetan movimiento reducido incluso si la preferencia cambia sin recargar.
 - Se conserva la fecha de expiración persistida: al vencer, aparece «✨ Precio de lanzamiento» y no se reinicia automáticamente.
 - CSS y composición del sitio conservados; la propuesta visual compacta sigue en la demo independiente.
+
+## Integración de la propuesta compacta en la web final
+
+A petición explícita del usuario, la propuesta dejó de estar limitada a la demo y se implementó en `index.html`, `css/offer-countdown.css`, `css/sticky-mobile.css` y `css/motion.css`.
+
+- Pricing: franja ámbar de ancho completo encima de comprar, texto oscuro, punto naranja, contador sin cápsula secundaria ni resplandor.
+- Sticky móvil: franja dentro de la superficie fija, en la primera fila; precio real $999 pequeño y tachado, precio actual $349 y botón de compra en la segunda fila. Se eliminó el espacio vacío reservado a la cápsula flotante.
+- Pulse suave (escala máxima 1.1, 320 ms) desde el inicio de los cinco minutos. Se respeta movimiento reducido y la expiración persistida.
+- Se reemplazaron las reglas históricas de los dos componentes por CSS consolidado. Se retiró el brillo del CTA sticky. El resto de la landing conserva su composición.

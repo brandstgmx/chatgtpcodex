@@ -1,516 +1,153 @@
-/* sticky-mobile — V11.46 visual baseline. */
-
+/* Integrated mobile purchase bar: urgency sits inside the fixed surface. */
 .mobile-offer-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   z-index: 1200;
-  display: none;
   opacity: 0;
   transform: translateY(100%);
   pointer-events: none;
+  contain: paint;
   transition:
     opacity 260ms ease,
     transform 300ms var(--ease-smooth);
-  will-change: transform, opacity;
-  position: fixed !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  top: auto !important;
-  height: auto !important;
-  max-height: none !important;
-  margin: 0 !important;
-  contain: paint !important;
 }
-
 .mobile-offer-bar.is-visible {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: none;
 }
-
 .mobile-offer-bar__inner {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
+  grid-template-columns: 74px minmax(0, 1fr);
   align-items: center;
-  gap: 12px;
-  border-radius: 0;
-  transition:
-    box-shadow 220ms ease,
-    background-color 220ms ease;
-  min-height: 76px !important;
-  padding: 11px 14px calc(11px + env(safe-area-inset-bottom, 0px)) !important;
-  border: 0 !important;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(247, 248, 255, 0.9) 100%
-  ) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.98) !important;
-  box-shadow:
-    0 -16px 38px rgba(27, 32, 66, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 -1px 0 rgba(75, 22, 233, 0.055) !important;
-  backdrop-filter: blur(26px) saturate(1.6) !important;
-  -webkit-backdrop-filter: blur(26px) saturate(1.6) !important;
+  gap: 12px 15px;
+  padding: 14px 17px calc(14px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid #e2e6ee;
+  box-shadow: 0 -8px 25px rgba(38, 52, 77, 0.06);
+  backdrop-filter: blur(18px);
 }
-
-.mobile-offer-bar__inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0.48) 0%,
-    rgba(255, 255, 255, 0.14) 23%,
-    rgba(255, 255, 255, 0.06) 68%,
-    rgba(255, 255, 255, 0.22) 100%
-  ) !important;
+.mobile-offer-bar.is-visible .mobile-offer-bar__inner {
+  pointer-events: auto;
 }
-
-.mobile-offer-bar__price {
-  position: relative;
-  z-index: 1;
-  min-height: 48px;
+.mobile-offer-bar__capsule {
+  position: static;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 35px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid #fae8d5;
+  border-radius: 10px;
+  background: #fff7ee;
+  color: #794a23;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.mobile-offer-bar__capsule > span:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.mobile-offer-bar__capsule [hidden] {
+  display: none !important;
+}
+.mobile-offer-bar__countdown {
+  display: inline-flex;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+  color: #9b4a0a;
+  font-size: 15px;
+  font-weight: 780;
+  letter-spacing: 0.5px;
+}
+.mobile-offer-bar__seconds {
+  display: inline-block;
+  transform-origin: center;
+}
+.mobile-offer-bar__seconds.is-pulsing {
+  animation: countdownTickV45 320ms ease-out;
+}
+.mobile-offer-bar__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
   white-space: nowrap;
 }
-.mobile-offer-bar__price small {
-  color: #858b99;
-  font-size: 8px;
-  font-weight: 850;
+.mobile-offer-bar__price-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-size: 10px;
+  color: #8690a0;
 }
-
+.mobile-offer-bar__price-old {
+  text-decoration: line-through;
+}
+.mobile-offer-bar__price small {
+  font-size: 9px;
+}
+.mobile-offer-bar__price-current {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.7px;
+  color: #202638;
+}
 .mobile-offer-bar__cta {
-  position: relative;
-  z-index: 1;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 48px;
-  width: 100%;
+  min-width: 0;
+  min-height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  border-radius: 999px;
+  gap: 5px;
+  padding: 12px 9px;
+  border-radius: 13px;
   background: var(--lime);
-  color: #112000;
-  font-size: 13px;
-  line-height: 1;
+  color: #172800;
+  font-size: 15px;
+  font-weight: 820;
   text-decoration: none;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  font-weight: 800;
-  letter-spacing: -0.012em;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    opacity 0.2s ease;
-  box-shadow:
-    0 10px 26px rgba(93, 170, 5, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 8px 20px rgba(128, 207, 11, 0.09);
+  transition: transform 0.2s ease;
 }
-
-.mobile-offer-bar__cta::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 2.35px;
-  background: conic-gradient(
-    from var(--sticky-edge-angle),
-    transparent 0 77%,
-    rgba(183, 255, 96, 0.2) 83%,
-    #b7ff60 87%,
-    #fff 90%,
-    #b7ff60 93%,
-    transparent 98%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  animation: stickyEdgeSweep 3.1s linear infinite;
-  pointer-events: none;
+.mobile-offer-bar__cta:active {
+  transform: scale(0.985);
 }
-
-@property --sticky-edge-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+.mobile-offer-bar__cta:focus-visible {
+  outline: 3px solid #d68930;
+  outline-offset: 3px;
 }
-
-@keyframes stickyEdgeSweep {
-  to {
-    --sticky-edge-angle: -360deg;
-  }
-}
-
 @media (max-width: 640px) {
   .mobile-offer-bar {
     display: block;
   }
 }
-
-.mobile-offer-bar__capsule [hidden] {
-  display: none !important;
-}
-
 @media (max-width: 350px) {
   .mobile-offer-bar__inner {
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: 9px;
+    padding-inline: 12px;
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 10px;
   }
   .mobile-offer-bar__cta {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
-
-@media (min-width: 641px) {
-  .mobile-offer-bar {
-    display: none !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .mobile-offer-bar {
-    animation: none !important;
-    transition: none !important;
-  }
-  .mobile-offer-bar__cta::before {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-@media (max-width: 640px) {
-  .mobile-offer-bar.is-paused-for-purchase {
-    pointer-events: none;
-  }
-}
-
-.mobile-offer-bar__cta:active {
-  transform: translateY(0) scale(0.985);
-  transition-duration: 90ms;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .mobile-offer-bar__cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 13px 28px rgba(93, 170, 5, 0.23);
-  }
-}
-
-.mobile-offer-bar.is-visible .mobile-offer-bar__inner {
-  box-shadow:
-    0 -14px 38px rgba(26, 31, 62, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -1px 0 rgba(75, 22, 233, 0.04);
-  pointer-events: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
+  .mobile-offer-bar,
   .mobile-offer-bar__cta {
-    transition: none !important;
+    transition: none;
   }
-}
-.mobile-offer-bar__capsule {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: calc(100% - 76px);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  line-height: 1;
-  letter-spacing: 0.01em;
-  z-index: 2;
-  bottom: calc(100% + 8px) !important;
-  min-height: 34px !important;
-  padding: 7px 14px !important;
-  border-radius: 999px !important;
-  font-size: 10px !important;
-  font-weight: 900 !important;
-  border: 1px solid #ff8a25 !important;
-  background: linear-gradient(180deg, #ff8b1e 0%, #f46b05 100%) !important;
-  color: #fff !important;
-  box-shadow:
-    0 10px 24px rgba(244, 107, 5, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-}
-
-.mobile-offer-bar__capsule > span:not([hidden]) {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px !important;
-}
-
-@media (max-width: 350px) {
-  .mobile-offer-bar__capsule {
-    min-height: 27px;
-    max-width: calc(100% - 44px) !important;
-    padding-inline: 10px !important;
-    font-size: 9px !important;
-  }
-  .mobile-offer-bar__countdown {
-    font-size: 9px !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mobile-offer-bar__seconds.is-pulsing {
-    transition: none !important;
-  }
-}
-
-.mobile-offer-bar__label {
-  opacity: 0.98;
-  color: #fff !important;
-}
-
-.mobile-offer-bar__countdown {
-  font-weight: 950 !important;
-  letter-spacing: 0.03em !important;
-  color: #fff !important;
-  display: inline-flex !important;
-  align-items: baseline !important;
-  border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.14) !important;
-  font-variant-numeric: tabular-nums !important;
-  min-width: 38px !important;
-  padding: 3px 6px !important;
-}
-.mobile-offer-bar__seconds {
-  margin-left: 1px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.22);
-  color: #fff !important;
-  display: inline-block !important;
-  animation: none !important;
-  transform-origin: 50% 62% !important;
-}
-
-.mobile-offer-bar__seconds.is-pulsing {
-  animation: countdownTickV45 360ms ease-out !important;
-}
-@media (max-width: 640px) {
-  .mobile-offer-bar {
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    --sticky-capsule-room: 70px;
-    padding: var(--sticky-capsule-room) 0 0 !important;
-  }
-
-  .mobile-offer-bar__capsule {
-    left: 50% !important;
-    bottom: calc(100% - var(--sticky-capsule-room) + 8px) !important;
-    transform: translateX(-50%) !important;
-    min-height: 34px !important;
-    padding: 8px 14px !important;
-    border: 1px solid #ffb36a !important;
-    background: linear-gradient(180deg, #ff8b1e 0%, #f46b05 100%) !important;
-    color: #fff !important;
-    box-shadow:
-      0 12px 28px rgba(244, 107, 5, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.26) !important;
-    font-size: 11px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.01em !important;
-    z-index: 4 !important;
-  }
-
-  .mobile-offer-bar__capsule > span:not([hidden]) {
-    gap: 6px !important;
-  }
-
-  .mobile-offer-bar__label {
-    color: #fff !important;
-  }
-
-  .mobile-offer-bar__capsule [data-mobile-offer-expired] {
-    color: #fff !important;
-  }
-
-  .mobile-offer-bar__countdown {
-    color: #fff !important;
-    min-width: 42px !important;
-    padding: 2px 7px !important;
-    border-radius: 999px !important;
-    background: rgba(255, 255, 255, 0.14) !important;
-    font-weight: 950 !important;
-    font-variant-numeric: tabular-nums !important;
-  }
-
-  .mobile-offer-bar__inner {
-    min-height: 92px !important;
-    padding: 26px 16px calc(12px + env(safe-area-inset-bottom, 0px)) !important;
-    display: grid !important;
-    grid-template-columns: minmax(114px, 132px) minmax(0, 1fr) !important;
-    gap: 12px !important;
-    align-items: center !important;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(248, 249, 255, 0.92) 100%
-    ) !important;
-    border-top: 1px solid rgba(233, 235, 245, 0.94) !important;
-    box-shadow:
-      0 -16px 34px rgba(22, 26, 54, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
-    backdrop-filter: blur(22px) saturate(1.45) !important;
-    -webkit-backdrop-filter: blur(22px) saturate(1.45) !important;
-  }
-
-  .mobile-offer-bar__inner::before {
-    display: none !important;
-  }
-
-  .mobile-offer-bar__price {
-    min-height: 58px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    gap: 5px !important;
-    white-space: nowrap !important;
-  }
-
-  .mobile-offer-bar__price-label {
-    color: #6f7484 !important;
-    font-size: 10px !important;
-    font-weight: 850 !important;
-    line-height: 1 !important;
-    letter-spacing: -0.01em !important;
-  }
-
-  .mobile-offer-bar__price-row {
-    display: inline-flex !important;
-    align-items: baseline !important;
-    gap: 3px !important;
-  }
-
-  .mobile-offer-bar__price-old {
-    position: relative !important;
-    color: #5f6679 !important;
-    font-size: clamp(22px, 6vw, 28px) !important;
-    font-weight: 950 !important;
-    line-height: 0.92 !important;
-    letter-spacing: -0.04em !important;
-  }
-
-  .mobile-offer-bar__price-old::after {
-    content: "" !important;
-    position: absolute !important;
-    left: -2px !important;
-    right: -3px !important;
-    top: 47% !important;
-    height: 2.5px !important;
-    border-radius: 999px !important;
-    background: #e3342f !important;
-    transform: rotate(-2deg) !important;
-  }
-
-  .mobile-offer-bar__price small {
-    color: #7b8090 !important;
-    font-size: 10px !important;
-    font-weight: 900 !important;
-    line-height: 1 !important;
-  }
-
-  .mobile-offer-bar__cta {
-    min-height: 54px !important;
-    padding: 0 18px !important;
-    border-radius: 999px !important;
-    justify-content: center !important;
-    text-align: center !important;
-    background: #8bec10 !important;
-    color: #121a03 !important;
-    font-size: 13px !important;
-    font-weight: 950 !important;
-    letter-spacing: -0.01em !important;
-    box-shadow: 0 12px 28px rgba(124, 209, 20, 0.2) !important;
-    overflow: hidden !important;
-  }
-
-  .mobile-offer-bar__cta::before {
-    content: "" !important;
-    position: absolute !important;
-    top: -20% !important;
-    left: -38% !important;
-    width: 26% !important;
-    height: 140% !important;
-    border-radius: 28px !important;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.55) 50%,
-      rgba(255, 255, 255, 0) 100%
-    ) !important;
-    filter: blur(0.5px) !important;
-    transform: skewX(-24deg) !important;
-    animation: stickyCtaShineSweep 2.7s ease-in-out infinite !important;
-    pointer-events: none !important;
-  }
-
-  .mobile-offer-bar__cta span {
-    position: relative;
-    z-index: 1;
-  }
-
-  @keyframes stickyCtaShineSweep {
-    0%,
-    14% {
-      left: -38%;
-      opacity: 0;
-    }
-    20% {
-      opacity: 0.95;
-    }
-    42% {
-      left: 112%;
-      opacity: 0.9;
-    }
-    50%,
-    100% {
-      left: 112%;
-      opacity: 0;
-    }
-  }
-}
-
-@media (max-width: 390px) {
-  .mobile-offer-bar__capsule {
-    max-width: calc(100% - 44px) !important;
-    font-size: 10px !important;
-  }
-
-  .mobile-offer-bar__inner {
-    grid-template-columns: 96px minmax(0, 1fr) !important;
-    gap: 10px !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-
-  .mobile-offer-bar__price-old {
-    font-size: clamp(20px, 8vw, 24px) !important;
-  }
-
-  .mobile-offer-bar__cta {
-    min-height: 52px !important;
-    font-size: 12px !important;
-    padding-inline: 12px !important;
-  }
-}
-
-.mobile-offer-bar.is-visible .mobile-offer-bar__capsule {
-  pointer-events: auto;
 }

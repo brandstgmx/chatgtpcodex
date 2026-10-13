@@ -8,7 +8,8 @@
     "build": "node build.cjs",
     "build:check": "node build.cjs --check",
     "test:animations": "node animations.cjs && node local-compatible.cjs",
-    "test:offer": "node offer-update.cjs"
+    "test:offer": "node offer-update.cjs",
+    "test:design": "node compact-urgency.cjs && node sticky.cjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",
