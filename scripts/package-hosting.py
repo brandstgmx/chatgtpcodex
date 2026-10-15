@@ -49,13 +49,25 @@ if __name__ == '__main__':
     for name in ['css', 'js', 'img']:
         files.extend(sorted(path for path in (SITE / name).rglob('*') if path.is_file()))
     with zipfile.ZipFile(hosting, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as package:
-        for name in ['css', 'js', 'img']:
+        directories = {parent.relative_to(SITE).as_posix()
+                       for path in files for parent in path.parents
+                       if parent != SITE and SITE in parent.parents}
+        for name in sorted(directories):
             package.writestr(entry(name, True), b'')
         for path in files:
             package.writestr(entry(path.relative_to(SITE).as_posix()), path.read_bytes())
     verify(hosting, SITE)
     full = REPO / 'landing-playbook-v12.0-clean-baseline-SITIO.zip'
-    normalize(full)
+    # Rebuild from current files; normalizing an older archive leaves stale code.
+    source_files = sorted(path for path in SITE.rglob('*')
+                          if path.is_file()
+                          and not {'node_modules', 'results', 'evidence'}.intersection(path.relative_to(SITE).parts)
+                          and path.name != 'SHA256SUMS')
+    with zipfile.ZipFile(full, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as package:
+        for path in source_files:
+            package.writestr(entry(SITE.name + '/' + path.relative_to(SITE).as_posix()), path.read_bytes())
+        demo = REPO / 'demos/demo-urgencia.html'
+        package.writestr(entry('demo-urgencia.html'), demo.read_bytes())
     # The independent demo is stored outside the site folder in this package.
     with zipfile.ZipFile(full) as package:
         for item in package.infolist():
