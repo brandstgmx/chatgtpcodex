@@ -1,0 +1,370 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "initial": {
+      "time": 2.743744,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.021086,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/39c1baed-0b19-4640-ac87-27e2053d1f31",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3135,
+    "currentHeight": 3135,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:51\n                ",
+      "mobile": "\n          04:51\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "initial": {
+      "time": 2.810378,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.11802,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/fd451908-84f7-40b7-bdfb-733978357143",
+      "frames": [
+        {
+          "time": 0.011672,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3267,
+    "currentHeight": 3267,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "initial": {
+      "time": 2.819106,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.018434,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/c0781946-6b74-4108-8c7e-c97e2a598a76",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3364,
+    "currentHeight": 3364,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initial": {
+      "time": 3.065418,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.202496,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/9f760b18-28fa-4a1f-b615-ed10c239162d",
+      "frames": [
+        {
+          "time": 0.005333,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3409,
+    "currentHeight": 3409,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:51\n                ",
+      "mobile": "\n          04:51\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "initial": {
+      "time": 2.709239,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.019061,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/5bfe6102-40f1-4b83-8eb5-21da9d4d5ffe",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3593,
+    "currentHeight": 3593,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "initial": {
+      "time": 2.718026,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.016072,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/1b0be85c-0c6c-421e-845b-4f9240ec3280",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3547,
+    "currentHeight": 3547,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "initial": {
+      "time": 2.705278,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.023536,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/e6c6ae09-c859-43aa-aa04-625cc145cbca",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3661,
+    "currentHeight": 3661,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "initial": {
+      "time": 3.000323,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.151994,
+      "muted": false,
+      "playing": true,
+      "source": "blob:http://127.0.0.1:8781/c68fa281-5f80-4a0e-9354-203e436a0156",
+      "frames": [
+        {
+          "time": 0.013357,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3729,
+    "currentHeight": 3729,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:51\n                ",
+      "mobile": "\n          04:51\n        "
+    },
+    "errors": [],
+    "pass": true
+  }
+]

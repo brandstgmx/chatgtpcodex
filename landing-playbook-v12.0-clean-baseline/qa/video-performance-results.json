@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "native",
+    "passed": true,
+    "libraryRequests": 0,
+    "mediaRequests": 16
+  },
+  {
+    "mode": "mse",
+    "passed": true,
+    "libraryRequests": 1,
+    "mediaRequests": 15
+  },
+  {
+    "mode": "save-data",
+    "passed": true,
+    "libraryRequests": 1,
+    "mediaRequests": 12
+  },
+  {
+    "mode": "initially-hidden",
+    "passed": true,
+    "libraryRequests": 1,
+    "mediaRequests": 16
+  }
+]

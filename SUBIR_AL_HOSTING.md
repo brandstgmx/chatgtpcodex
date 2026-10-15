@@ -16,3 +16,5 @@ Si `/index.html` carga y la URL que termina en `/` no, hay que revisar el docume
 Desde este entorno no se pudo verificar la respuesta del servidor de origen: el proxy de salida rechazó la conexión a ese dominio. La corrección del paquete se verificó localmente: integridad ZIP, permisos de cada entrada y contenido idéntico al sitio auditado.
 
 Para regenerar los paquetes: `python scripts/package-hosting.py`.
+
+La versión optimizada carga `js/app-video-efficient-1.js`. Incluye la dependencia diferida `js/vendor/hls-stream-optimized.js`; sube y extrae el ZIP completo para que también esté disponible. Conserva el video, el reinicio con sonido, el bloqueo de avance/retroceso y el checkout. Tras extraer, abre `/franquiciar-mi-negocio/index.html?player=efficient-1`; si el hosting mantiene una copia del HTML en caché, purga esa caché. Los fuentes y QA completos están en `landing-playbook-v12.0-clean-baseline-SITIO.zip`; el ZIP HOSTING solo necesita los archivos de ejecución.

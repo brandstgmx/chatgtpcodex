@@ -1,5 +1,6 @@
 """Package static files with explicit public-server read permissions."""
 from pathlib import Path
+import re
 import stat
 import tempfile
 import time
@@ -47,8 +48,12 @@ def verify(archive, root):
 if __name__ == '__main__':
     hosting = REPO / 'landing-playbook-v12.0-HOSTING.zip'
     files = [SITE / name for name in ['index.html', 'robots.txt', 'sitemap.xml']]
-    for name in ['css', 'js', 'img']:
+    for name in ['css', 'img']:
         files.extend(sorted(path for path in (SITE / name).rglob('*') if path.is_file()))
+    # Ship the complete runtime, not duplicate source modules or obsolete bundles.
+    script = re.search(r'<script\s+src="(js/app[^"?]*\.js)', (SITE / 'index.html').read_text())
+    assert script, 'Missing deployed application bundle'
+    files.extend(SITE / name for name in [script[1], 'js/vendor/hls-stream-optimized.js', 'js/vendor/LICENSE.hls.js.txt'])
     with zipfile.ZipFile(hosting, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as package:
         directories = {parent.relative_to(SITE).as_posix()
                        for path in files for parent in path.parents

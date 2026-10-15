@@ -1,0 +1,370 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "initial": {
+      "time": 2.829846,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.019377,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3135,
+    "currentHeight": 3135,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "initial": {
+      "time": 2.7552,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.062833,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3267,
+    "currentHeight": 3267,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "initial": {
+      "time": 2.778415,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.11848,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3364,
+    "currentHeight": 3364,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initial": {
+      "time": 3.098181,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.220087,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0.001291,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3409,
+    "currentHeight": 3409,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:50\n                ",
+      "mobile": "\n          04:50\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "initial": {
+      "time": 2.700806,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.018763,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3593,
+    "currentHeight": 3593,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:52\n                ",
+      "mobile": "\n          04:52\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "initial": {
+      "time": 2.706061,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.013789,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3547,
+    "currentHeight": 3547,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:51\n                ",
+      "mobile": "\n          04:51\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "initial": {
+      "time": 2.708883,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.005962,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3661,
+    "currentHeight": 3661,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:51\n                ",
+      "mobile": "\n          04:51\n        "
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "initial": {
+      "time": 3.079377,
+      "muted": true,
+      "controls": false,
+      "pip": true,
+      "remote": true,
+      "inline": true
+    },
+    "audible": {
+      "time": 0.162422,
+      "muted": false,
+      "playing": true,
+      "source": "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8",
+      "frames": [
+        {
+          "time": 0,
+          "muted": false,
+          "ready": 4
+        }
+      ],
+      "reloads": [
+        "emptied",
+        "loadstart"
+      ]
+    },
+    "title": "El video ya comenzó",
+    "forwardBlocked": true,
+    "backwardBlocked": true,
+    "centered": true,
+    "gateHidden": true,
+    "noSeek": true,
+    "originalHeight": 3729,
+    "currentHeight": 3729,
+    "sectionsSame": true,
+    "footerSticky": true,
+    "timer": {
+      "active": "active",
+      "main": "\n                  04:50\n                ",
+      "mobile": "\n          04:50\n        "
+    },
+    "errors": [],
+    "pass": true
+  }
+]

@@ -1,6 +1,15 @@
 let initialized = false;
 
-import Hls from "./vendor/hls.light.mjs";
+// Native HLS browsers never download this library. Other browsers load it only
+// when the video approaches the viewport or the visitor requests playback.
+let hlsModule;
+function getHls() {
+  hlsModule ??= import("./vendor/hls-stream-optimized.js").catch((error) => {
+    hlsModule = null;
+    throw error;
+  });
+  return hlsModule;
+}
 import { analytics } from "./shared.js";
 
 // Bunny Stream library 780085, video 7b2bbd93-26c7-450f-8c58-3f3c99139b43.
@@ -14,7 +23,7 @@ export function initVsl() {
   );
   if (!frame) return;
   initialized = true;
-  frame.dataset.vslVersion = "audio-reset-2";
+  frame.dataset.vslVersion = "adaptive-loading-1";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -40,7 +49,7 @@ export function initVsl() {
   video.playsInline = true;
   video.disablePictureInPicture = true;
   video.disableRemotePlayback = true;
-  video.preload = "auto";
+  video.preload = "none";
 
   const gate = document.createElement("button");
   gate.type = "button";
@@ -80,6 +89,46 @@ export function initVsl() {
   let restoringSeek = false;
   let restartingForAudio = false;
   let sourceGeneration = 0;
+  let sourceRequested = false;
+  let nearViewport = false;
+  let resumeWhenVisible = false;
+  const connection = navigator.connection;
+  const savingData =
+    connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "");
+
+  // A short forward buffer limits abandoned downloads; ABR can still choose a
+  // lower rendition on slow connections. Never upscale a small player to 4K.
+  function capQuality(engine) {
+    const maxHeight = savingData || !audioEnabled ? 480 : 720;
+    let cap = -1;
+    engine.levels.forEach((level, index) => {
+      if (level.height <= maxHeight) cap = index;
+    });
+    engine.autoLevelCapping = Math.max(0, cap);
+  }
+
+  function suspendPlayback() {
+    if (!sourceRequested) return;
+    if (!video.paused) {
+      resumeWhenVisible = true;
+      video.pause();
+    }
+    hls?.stopLoad();
+    video.preload = "metadata";
+  }
+
+  function resumePlayback() {
+    if (
+      !resumeWhenVisible ||
+      document.hidden ||
+      (!nearViewport && !audioEnabled)
+    )
+      return;
+    resumeWhenVisible = false;
+    video.preload = "auto";
+    hls?.startLoad(-1);
+    startPlayback();
+  }
   const seekTolerance = 0.12;
 
   // Only playback may advance the trusted position, never a seeking event.
@@ -175,7 +224,9 @@ export function initVsl() {
     updatePlayback();
   }
 
-  function loadSource(reset = false) {
+  async function loadSource(reset = false) {
+    sourceRequested = true;
+    video.preload = "auto";
     const generation = ++sourceGeneration;
     failed = false;
     hls?.destroy();
@@ -191,18 +242,38 @@ export function initVsl() {
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = BUNNY_HLS_URL;
       startPlayback();
-    } else if (Hls.isSupported()) {
-      hls = new Hls({ enableWorker: true, startPosition: 0 });
-      hls.on(Hls.Events.ERROR, (_event, data) => {
-        if (generation === sourceGeneration && data.fatal) showError();
-      });
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        if (generation === sourceGeneration) startPlayback();
-      });
-      hls.loadSource(BUNNY_HLS_URL);
-      hls.attachMedia(video);
     } else {
-      showError();
+      try {
+        const { default: Hls } = await getHls();
+        if (generation !== sourceGeneration) return;
+        if (!Hls.isSupported()) return showError();
+        const engine = new Hls({
+          enableWorker: true,
+          startPosition: 0,
+          startLevel: 0,
+          capLevelToPlayerSize: true,
+          maxBufferLength: savingData ? 5 : 8,
+          maxMaxBufferLength: savingData ? 8 : 12,
+          maxBufferSize: 4 * 1000 * 1000,
+          backBufferLength: 8,
+        });
+        hls = engine;
+        engine.on(Hls.Events.ERROR, (_event, data) => {
+          if (generation === sourceGeneration && data.fatal) showError();
+        });
+        engine.on(Hls.Events.MANIFEST_PARSED, () => {
+          if (generation !== sourceGeneration) return;
+          capQuality(engine);
+          if (document.hidden || (!nearViewport && !audioEnabled)) {
+            resumeWhenVisible = true;
+            engine.stopLoad();
+          } else startPlayback();
+        });
+        engine.loadSource(BUNNY_HLS_URL);
+        engine.attachMedia(video);
+      } catch {
+        if (generation === sourceGeneration) showError();
+      }
     }
   }
 
@@ -217,14 +288,25 @@ export function initVsl() {
     loadSource(true);
   });
   toggle.addEventListener("click", () => {
-    if (video.paused || video.ended) startPlayback();
-    else video.pause();
+    resumeWhenVisible = false;
+    if (!sourceRequested) loadSource();
+    else if (video.paused || video.ended) {
+      hls?.startLoad(-1);
+      startPlayback();
+    } else {
+      video.pause();
+      hls?.stopLoad();
+    }
   });
   video.addEventListener("playing", () => {
     if (video.paused || video.readyState < 2) return;
     if (restartingForAudio) {
       restartingForAudio = false;
       acceptedTime = video.currentTime;
+    }
+    if (document.hidden || (!nearViewport && !audioEnabled)) {
+      suspendPlayback();
+      return;
     }
     updatePlayback();
     if (!audioEnabled) {
@@ -252,12 +334,38 @@ export function initVsl() {
   window.addEventListener("pagehide", () => {
     resumeAfterPageShow = !video.paused;
     video.pause();
+    hls?.stopLoad();
   });
   window.addEventListener("pageshow", (event) => {
-    if (event.persisted && resumeAfterPageShow) startPlayback();
+    if (event.persisted && resumeAfterPageShow) {
+      resumeWhenVisible = true;
+      resumePlayback();
+    }
   });
 
   updatePlayback();
   updateProgress();
-  loadSource();
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) suspendPlayback();
+    else if (nearViewport && !sourceRequested) loadSource();
+    else resumePlayback();
+  });
+
+  // Reserve the existing frame from the start, but defer all video/network work.
+  // Keep audible playback when scrolling; only the silent preview is suspended.
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(
+      ([entry]) => {
+        nearViewport = entry.isIntersecting;
+        if (nearViewport && !document.hidden) {
+          if (!sourceRequested) loadSource();
+          else resumePlayback();
+        } else if (!audioEnabled) suspendPlayback();
+      },
+      { rootMargin: "200px 0px", threshold: 0 },
+    ).observe(frame);
+  } else {
+    nearViewport = true;
+    if (!document.hidden) loadSource();
+  }
 }
