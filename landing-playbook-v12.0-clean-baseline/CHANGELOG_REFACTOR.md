@@ -69,3 +69,22 @@ A petición explícita del usuario, la propuesta dejó de estar limitada a la de
 - Canvas del hero detiene frames fuera del viewport y cuando la pestaña queda oculta; vuelve a funcionar al regresar.
 - Open Graph/Twitter/JSON-LD apuntan a la portada PNG incluida, con dimensiones reales, en vez de a un JPG ausente del paquete.
 - Permanecen el precio real $999, precio especial $349, reel al llegar al precio, sticky compacto y timer persistente de cinco minutos con pulse.
+
+## Actualización exclusiva del video: controles tipo VTurb
+
+- Bunny Stream permanece como hosting: biblioteca 780085, video 7b2bbd93-26c7-450f-8c58-3f3c99139b43. Fuente HLS pública proporcionada por el usuario: `https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8`.
+- Se reemplaza el iframe por video HTML5 con HLS nativo donde el navegador lo admite y Hls.js 1.7.3 light incluido localmente para navegadores con Media Source Extensions. No se requiere un CDN adicional para el código del reproductor. La dependencia conserva su licencia Apache-2.0 y avisos de terceros.
+- Autoplay silenciado y reproducción inline. La capa muestra «El video ya comenzó» y «Haz clic para escuchar» cuando empieza la reproducción. El clic quita mute y oculta la capa sin cambiar currentTime. Si el navegador bloquea autoplay, se ofrece inicio mediante clic; no se afirma que el video empezó antes de recibir playing.
+- Controles visibles: Play/Pause y progreso de solo lectura. No hay controles nativos, sliders, handlers de seek, volumen, tiempo, fullscreen, settings, captions, PiP, AirPlay, Chromecast ni velocidades. Se deshabilitan controles remotos y PiP mediante los atributos admitidos por cada navegador. Los controles propios nunca asignan currentTime.
+- El video usa object-fit: cover, manteniendo proporción y sin deformarlo. Si la relación de aspecto difiere del frame 16:9 existente, se recortan bordes para evitar barras laterales; no se puede eliminar por CSS una barra negra que ya esté grabada en la imagen.
+- Se preservan el contenedor, aspect-ratio, border-radius, sombras y tamaños de la sección. Todos los archivos ajenos al video y al changelog permanecen idénticos byte por byte, incluido index.html, sticky, timer, pricing, FAQ y hero. js/app.js solo se regenera para incluir el módulo y su dependencia.
+
+### QA de este parche
+
+Prueba de reproducción con HLS local real (manifiesto, segmentos H.264/AAC y decodificación del navegador), sustituyendo exclusivamente las respuestas del recurso CDN: 360×800, 390×844, 430×932, 768×1024, 1024×768, 1366×768, 1440×900 y 1920×1080, todas aprobadas en Chromium.
+
+Comprobado: autoplay muted, texto de la capa, audio sin reinicio, Play/Pause, click y drag sobre progreso sin seek, progreso actualizado, controles nativos ausentes, dimensiones/radio del frame iguales, scrollHeight idéntico al baseline en cada tamaño y estable durante 15 intentos de llegar al final, sticky oculto junto al footer, countdown activo y sincronizado. Sin excepciones JavaScript ni errores de consola durante esas pruebas. También se comprobó que el bundle coincide con sus fuentes y no hay cambios en las demás secciones.
+
+Límite de verificación: el proxy de este entorno bloquea la conexión tanto a Bunny Player como al hostname CDN con «Tunnel connection failed: 403 Forbidden». Ese rechazo es del proxy de salida, no una respuesta comprobada del servidor de Bunny. Por tanto, la URL del video real quedó configurada pero su reproducción y CORS reales deben comprobarse desde el hosting/navegador del usuario. Tampoco se verificó Safari en un dispositivo físico. No se presenta el HLS local de QA como si fuera el video del usuario.
+
+Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.css, js/vsl.js, js/app.js, js/vendor/hls.light.mjs, js/vendor/LICENSE.hls.js.txt y este changelog. Extraer dentro de la carpeta existente de la landing, sobrescribiendo esos archivos; no sustituir index.html ni otras secciones. Todos los archivos del parche llevan permisos 0644 y sus carpetas 0755.
