@@ -2,7 +2,7 @@
 @import url("base.css");
 @import url("header.css");
 @import url("hero.css");
-@import url("vsl.css");
+@import url("vsl.css?v=video-locked-1");
 @import url("price-anchor.css");
 @import url("decision-proof.css");
 @import url("purchase-box.css");

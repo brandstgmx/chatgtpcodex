@@ -9,9 +9,12 @@ const BUNNY_HLS_URL =
 
 export function initVsl() {
   if (initialized) return;
-  const frame = document.querySelector("[data-video-frame]");
+  const frame = document.querySelector(
+    "[data-video-frame], #video .video-frame",
+  );
   if (!frame) return;
   initialized = true;
+  frame.dataset.vslVersion = "locked-1";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -73,6 +76,54 @@ export function initVsl() {
   let audioEnabled = false;
   let failed = false;
   let resumeAfterPageShow = false;
+  let acceptedTime = 0;
+  let restoringSeek = false;
+  const seekTolerance = 0.12;
+
+  // Only playback may advance the trusted position, never a seeking event.
+  function rememberPlaybackPosition() {
+    if (!video.seeking && !restoringSeek) acceptedTime = video.currentTime;
+  }
+  if (typeof video.requestVideoFrameCallback === "function") {
+    const rememberFrame = () => {
+      rememberPlaybackPosition();
+      video.requestVideoFrameCallback(rememberFrame);
+    };
+    video.requestVideoFrameCallback(rememberFrame);
+  }
+  video.addEventListener("timeupdate", rememberPlaybackPosition);
+  video.addEventListener("pause", rememberPlaybackPosition);
+  video.addEventListener("seeking", () => {
+    if (
+      restoringSeek ||
+      Math.abs(video.currentTime - acceptedTime) <= seekTolerance
+    )
+      return;
+    restoringSeek = true;
+    video.currentTime = acceptedTime;
+  });
+  video.addEventListener("seeked", () => {
+    restoringSeek = false;
+  });
+  frame.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.target.closest(".vsl-controls, .vsl-audio-gate, .vsl-video") &&
+        ["ArrowLeft", "ArrowRight", "Home", "End", "KeyJ", "KeyL"].includes(
+          event.code,
+        )
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    true,
+  );
+  frame.addEventListener("contextmenu", (event) => event.preventDefault());
+  new MutationObserver(() => {
+    if (video.controls) video.controls = false;
+  }).observe(video, { attributes: true, attributeFilter: ["controls"] });
 
   function showBlocked() {
     gate.hidden = false;
@@ -99,6 +150,8 @@ export function initVsl() {
   }
 
   function startPlayback() {
+    // Explicit replay after completion is allowed; scrubbing during playback is not.
+    if (video.ended) acceptedTime = 0;
     const request = video.play();
     request?.catch(() => {
       if (!failed) showBlocked();

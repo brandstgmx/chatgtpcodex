@@ -101,3 +101,14 @@ Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.
 - Sustituida la URL de ficha de producto por `https://payhip.com/buy?link=KCz65` en los cuatro botones de compra, la configuración y el bundle.
 - Se conserva todo lo demás. Verificados los cuatro href y la consistencia del bundle con sus fuentes.
 - El parche Payhip actualizado reemplaza al anterior y contiene los mismos cuatro archivos: index.html, js/shared.js, js/app.js y este changelog. Aplicar sobre la versión con el parche de video instalado.
+
+## Bloqueo reforzado de avance y retroceso del video
+
+- La barra sigue siendo un progressbar de lectura, sin miniaturas ni interacción. Además, seeking devuelve el video a la última posición de reproducción aceptada; esa posición no se actualiza durante un salto. Se conserva una tolerancia de 120 ms para redondeo y posición de frames.
+- Bloqueados los atajos de avance/retroceso cuando el foco está dentro del reproductor. Un observer retira controles nativos si otro código intenta activarlos. Context menu desactivado únicamente dentro del frame.
+- Se mantiene autoplay muted, activación de audio sin reinicio y Play/Pause. Se permite volver a reproducir tras completar el video mediante el botón Play.
+- Selector de frame compatible con el atributo original o con #video .video-frame. Marca de diagnóstico interna: data-vsl-version="locked-1".
+- URLs de app.js, styles.css y el import de vsl.css versionadas con video-locked-1 para pedir los archivos nuevos al navegador. index.html solo cambia esas dos referencias; no cambia el texto ni el layout de ninguna sección.
+- QA con HLS local real: ocho tamaños aprobados, incluyendo click/drag sin seek y rechazo de asignaciones de posición hacia adelante y atrás en pausa. Pruebas adicionales en 390 y 1440: saltos durante reproducción rechazados, atajos bloqueados, controles nativos retirados y ausencia de iframe/miniaturas. Se mantienen altura, radio, timer y ocultamiento del sticky junto al footer.
+- La captura del usuario mostraba una barra naranja con miniaturas y otro texto inferior; esa UI no existe en este reproductor. El HTML/JS efectivamente publicados siguen sin poder compararse desde el entorno, cuyo proxy bloquea el hosting y Bunny. Se solicitó el bloque publicado para identificar diferencias; no se presenta la caché como causa confirmada ni se afirma una verificación del video real.
+- Regenerado el ZIP completo para extracción directa en cPanel, con la corrección y compra directa Payhip, archivos 0644 y carpetas 0755.

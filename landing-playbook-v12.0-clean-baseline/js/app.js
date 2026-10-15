@@ -24625,9 +24625,12 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
   var BUNNY_HLS_URL = "https://vz-d4744015-b5b.b-cdn.net/7b2bbd93-26c7-450f-8c58-3f3c99139b43/playlist.m3u8";
   function initVsl() {
     if (initialized10) return;
-    const frame = document.querySelector("[data-video-frame]");
+    const frame = document.querySelector(
+      "[data-video-frame], #video .video-frame"
+    );
     if (!frame) return;
     initialized10 = true;
+    frame.dataset.vslVersion = "locked-1";
     const video = document.createElement("video");
     video.className = "vsl-video";
     video.setAttribute(
@@ -24683,6 +24686,46 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     let audioEnabled = false;
     let failed = false;
     let resumeAfterPageShow = false;
+    let acceptedTime = 0;
+    let restoringSeek = false;
+    const seekTolerance = 0.12;
+    function rememberPlaybackPosition() {
+      if (!video.seeking && !restoringSeek) acceptedTime = video.currentTime;
+    }
+    if (typeof video.requestVideoFrameCallback === "function") {
+      const rememberFrame = () => {
+        rememberPlaybackPosition();
+        video.requestVideoFrameCallback(rememberFrame);
+      };
+      video.requestVideoFrameCallback(rememberFrame);
+    }
+    video.addEventListener("timeupdate", rememberPlaybackPosition);
+    video.addEventListener("pause", rememberPlaybackPosition);
+    video.addEventListener("seeking", () => {
+      if (restoringSeek || Math.abs(video.currentTime - acceptedTime) <= seekTolerance)
+        return;
+      restoringSeek = true;
+      video.currentTime = acceptedTime;
+    });
+    video.addEventListener("seeked", () => {
+      restoringSeek = false;
+    });
+    frame.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.target.closest(".vsl-controls, .vsl-audio-gate, .vsl-video") && ["ArrowLeft", "ArrowRight", "Home", "End", "KeyJ", "KeyL"].includes(
+          event.code
+        )) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      },
+      true
+    );
+    frame.addEventListener("contextmenu", (event) => event.preventDefault());
+    new MutationObserver(() => {
+      if (video.controls) video.controls = false;
+    }).observe(video, { attributes: true, attributeFilter: ["controls"] });
     function showBlocked() {
       gate.hidden = false;
       gateTitle.textContent = "Reproducir video";
@@ -24702,6 +24745,7 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
       progress.setAttribute("aria-valuenow", String(Math.round(fraction * 100)));
     }
     function startPlayback() {
+      if (video.ended) acceptedTime = 0;
       const request = video.play();
       request?.catch(() => {
         if (!failed) showBlocked();
