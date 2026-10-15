@@ -95,3 +95,9 @@ Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.
 - Actualizados exclusivamente los cuatro href del HTML y la configuración compartida; bundle regenerado. Los enlaces funcionan también antes de inicializar JavaScript. Sin cambios de diseño, copy, precio ni lógica de video, timer, FAQ o sticky.
 - Verificación en escritorio 1440×900 y móvil 390×844: los cuatro href apuntan al destino exacto. Click en pricing y en sticky navega a esa URL, interceptada localmente para comprobar la navegación sin efectuar compras. Bundle consistente con las fuentes.
 - Parche `landing-playbook-v12.0-PAYHIP-UPDATE.zip`: únicamente index.html, js/shared.js, js/app.js y este changelog. Aplicar sobre la versión actual con el parche de video ya instalado; archivos 0644 y carpetas 0755.
+
+## Corrección: compra directa Payhip
+
+- Sustituida la URL de ficha de producto por `https://payhip.com/buy?link=KCz65` en los cuatro botones de compra, la configuración y el bundle.
+- Se conserva todo lo demás. Verificados los cuatro href y la consistencia del bundle con sus fuentes.
+- El parche Payhip actualizado reemplaza al anterior y contiene los mismos cuatro archivos: index.html, js/shared.js, js/app.js y este changelog. Aplicar sobre la versión con el parche de video instalado.
