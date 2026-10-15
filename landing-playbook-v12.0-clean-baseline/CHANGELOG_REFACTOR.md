@@ -141,3 +141,10 @@ Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.
 - Bundle desplegado nuevo: `js/app-video-efficient-1.js`; dependencia diferida `js/vendor/hls-stream-optimized.js`. No se modifican CSS, textos, precios, checkout, hero, FAQ, sticky ni countdown. Se minifica el código existente sin cambiar su lógica fuera del reproductor.
 - El ZIP para hosting incluye todos los recursos de ejecución, sin módulos fuente duplicados ni bundles históricos. El ZIP de fuentes conserva los módulos y QA. Ambos mantienen archivos 0644 y carpetas 0755.
 - QA y límites de la medición documentados en `VIDEO_PERFORMANCE_QA.md`; pruebas de red con HLS local decodificado, no con el CDN facturable del usuario.
+
+## Navegación hacia pricing y número de páginas — 2026-10-15
+
+- Botones del header y hero enlazan a `#oferta`, el box de precio inferior. Se reemplaza `data-checkout-link` por `data-track-cta` para evitar que JavaScript restaure Payhip y conservar el registro de clic sin registrar un inicio de checkout prematuro.
+- Hero: «PDF · 67 páginas» sustituido por «38 páginas de alto valor». El dato del box de precio también se actualiza a 38 páginas para mantener consistencia.
+- Compra en el box y sticky conservan la URL directa de Payhip. No se cambian estilos, reproductor, bundle, timer ni otras secciones.
+- Verificado en 360, 390, 430, 768 y 1440 px: clic real en ambos botones llega a pricing, sin registrar checkout anticipado; copy y enlaces de pago correctos, sin excepciones JavaScript.
