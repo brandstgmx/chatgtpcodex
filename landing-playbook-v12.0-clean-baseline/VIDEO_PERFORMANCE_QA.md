@@ -69,3 +69,16 @@ APP_URL=http://127.0.0.1:8783/ VSL_FORCE_MSE=1 QA_OUTPUT_FILE=video-bounded-regr
 El proxy de salida sigue bloqueando el hostname CDN con `CONNECT tunnel failed, response 403`; ese rechazo no demuestra un error de Bunny. No se verifican aquí bitrates/manifiestos reales, CORS, caché, factura, LCP/INP de producción ni conversiones. La prueba nativa es una ruta forzada en Chromium, no Safari/iOS físico.
 
 El ancho de banda del panel es acumulado; el contador de vistas del player no es una medida fiable de todas las solicitudes de un reproductor HLS propio, pruebas, reinicios y recargas. No se calcula costo por visita dividiendo ambos números. Cada recarga borra la caché de memoria; el ahorro persistente entre visitas depende de la caché HTTP del navegador y del CDN.
+
+## Portada de carga añadida posteriormente
+
+La corrección del primer fotograma añade únicamente una portada local usando `img/embedded-3.png`, ya cargada por el hero, y estilos dentro del VSL. No cambia la lógica de entrega ni inicia solicitudes adicionales a Bunny. El CSS de la sección de video cambia para mostrar esa portada; los tamaños y estilos de las demás secciones se mantienen. El video se revela después de disponer de un fotograma decodificado, con fallback para motores sin callbacks de frame. También se cubre el reinicio de audio.
+
+`qa/video-poster.cjs` ralentiza las respuestas HLS y comprueba la portada con la imagen local cargada, transparencia del video antes de decodificar y visibilidad posterior, reinicio con sonido, misma altura de documento y ausencia de solicitudes de imágenes al CDN. Anchos: 360, 390, 430, 768, 1024, 1366, 1440 y 1920 px. Se repite 390 px deshabilitando requestVideoFrameCallback.
+
+```sh
+APP_URL=http://127.0.0.1:8783/ node video-poster.cjs
+APP_URL=http://127.0.0.1:8783/ VSL_NO_FRAME_CALLBACK=1 QA_WIDTHS='[390]' node video-poster.cjs
+```
+
+La carga ralentizada usa el mismo fixture de 18 s descrito en las instrucciones de regresión. La portada no implica que el tiempo de descarga/decodificación sea cero. El cambio se validó en Chromium; no se ha ejecutado Firefox en macOS, como en la captura del usuario.

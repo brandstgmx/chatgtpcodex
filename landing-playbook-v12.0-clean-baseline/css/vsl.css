@@ -362,3 +362,53 @@ video {
     display: none;
   }
 }
+
+/* Local cover stays painted until the first decoded video frame is ready. */
+.video-frame .vsl-poster {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 12% 30%,
+      rgba(132, 239, 0, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 85% 85%,
+      rgba(75, 22, 233, 0.13),
+      transparent 65%
+    ),
+    linear-gradient(135deg, #f7f9ff, #eeecfa);
+}
+.video-frame .vsl-poster img {
+  position: absolute;
+  top: 9%;
+  left: 8%;
+  height: 82%;
+  width: auto;
+  max-width: 35%;
+  object-fit: contain;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 14px 20px rgba(32, 35, 74, 0.18));
+}
+.video-frame .vsl-video {
+  opacity: 0;
+}
+.video-frame.is-video-ready .vsl-video {
+  opacity: 1;
+}
+.video-frame.is-video-ready .vsl-poster {
+  visibility: hidden;
+}
+@media (max-width: 640px) {
+  .video-frame .vsl-poster img {
+    top: -16%;
+    left: 5%;
+    height: 135%;
+    max-width: 65%;
+    opacity: 0.18;
+    filter: none;
+  }
+}

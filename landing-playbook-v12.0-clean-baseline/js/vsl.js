@@ -24,7 +24,7 @@ export function initVsl() {
   );
   if (!frame) return;
   initialized = true;
-  frame.dataset.vslVersion = "bounded-preview-1";
+  frame.dataset.vslVersion = "poster-1";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -78,7 +78,21 @@ export function initVsl() {
   const fill = document.createElement("span");
   progress.append(fill);
   controls.append(toggle, progress);
-  frame.replaceChildren(video, gate, controls);
+  // Reuse the product cover already loaded by the hero: zero new Bunny traffic.
+  const poster = document.createElement("div");
+  poster.className = "vsl-poster";
+  poster.setAttribute("aria-hidden", "true");
+  const cover = document.createElement("img");
+  cover.src =
+    document.querySelector(".hero-product-clean__cover")?.src ||
+    "img/embedded-3.png";
+  cover.alt = "";
+  cover.width = 900;
+  cover.height = 1273;
+  cover.decoding = "async";
+  poster.append(cover);
+  frame.classList.remove("is-video-ready");
+  frame.replaceChildren(poster, video, gate, controls);
 
   let hls = null;
   let started = false;
@@ -158,11 +172,25 @@ export function initVsl() {
   }
   if (typeof video.requestVideoFrameCallback === "function") {
     const rememberFrame = () => {
+      // Swap only after a real frame has reached the compositor, not on play().
+      if (video.readyState >= 2) frame.classList.add("is-video-ready");
       rememberPlaybackPosition();
       video.requestVideoFrameCallback(rememberFrame);
     };
     video.requestVideoFrameCallback(rememberFrame);
   }
+  // Also cover engines that throttle frame callbacks for a transparent video.
+  // loadeddata means a frame has been decoded; reveal it on the next paint.
+  video.addEventListener("loadeddata", () => {
+    const generation = sourceGeneration;
+    requestAnimationFrame(() => {
+      if (generation === sourceGeneration && video.readyState >= 2)
+        frame.classList.add("is-video-ready");
+    });
+  });
+  video.addEventListener("emptied", () =>
+    frame.classList.remove("is-video-ready"),
+  );
   video.addEventListener("timeupdate", rememberPlaybackPosition);
   video.addEventListener("pause", rememberPlaybackPosition);
   video.addEventListener("seeking", () => {
@@ -269,6 +297,7 @@ export function initVsl() {
     hls?.destroy();
     hls = null;
     if (reset) {
+      frame.classList.remove("is-video-ready");
       // Drop the previous media pipeline as well as its playback position.
       video.removeAttribute("src");
       video.load();

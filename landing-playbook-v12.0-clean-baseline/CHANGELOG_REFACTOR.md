@@ -164,3 +164,12 @@ La optimización anterior no limitaba la precarga de los motores HLS nativos y l
 - Progreso referido a la duración completa, aunque la vista previa sea un fragmento. No se registra una finalización de video al repetir la vista previa. Bloqueo de seek, reinicio con sonido, Play/Pause y diseño conservados.
 - Nuevo archivo desplegado `js/app-video-bounded-preview-1.js`. Header/hero mantienen navegación a pricing, 38 páginas y checkout Payhip sin cambios.
 - QA con un HLS local de 45 segundos: vista previa anterior 9 solicitudes de segmentos / 1 188 912 bytes frente a 1 solicitud / 159 236 bytes durante la misma ventana de observación. El segmento se repite sin nuevas solicitudes y se reutiliza al activar sonido. Es una comparación de fixture, no una medición del gasto real en Bunny. Informe en `VIDEO_PERFORMANCE_QA.md`.
+
+## Portada durante la carga del primer fotograma — 2026-10-15
+
+- El fondo plano de carga se sustituye por una portada local con el mismo recurso del ebook que ya muestra el hero, más un fondo CSS. No añade recursos ni solicitudes a Bunny, ni anticipa la descarga de segmentos del video.
+- El elemento video permanece transparente hasta tener un fotograma decodificado, mediante requestVideoFrameCallback y un fallback de loadeddata sincronizado con el siguiente paint. Se evita depender únicamente de playing, que puede llegar antes de pintar la imagen.
+- La portada vuelve a aparecer durante el reinicio con sonido y permanece visible en la ruta nativa que espera al clic. El contenedor conserva proporción, dimensiones, radio, sombra y controles. El tiempo real de red/decodificación no se elimina: se presenta una imagen durante esa espera.
+- Sin cambios en la entrega acotada, caché de segmentos, límite de calidad/buffer, checkout, precios, páginas, navegación, sticky o timer.
+- Bundle `js/app-video-poster-1.js` y versiones nuevas de styles.css/vsl.css para evitar conservar estilos anteriores en caché.
+- QA de carga ralentizada y reinicio con audio: portada disponible mientras el video aún no tiene datos, video visible al decodificar, cero solicitudes de imágenes al CDN, scrollHeight estable. Pruebas en ocho anchos de 360 a 1920 px, más fallback sin requestVideoFrameCallback. Regresión funcional del player en móvil, tablet y escritorio. El entorno sigue sin acceso al CDN real y sin Firefox/macOS o Safari/iOS físicos.

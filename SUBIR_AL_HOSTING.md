@@ -17,8 +17,10 @@ Desde este entorno no se pudo verificar la respuesta del servidor de origen: el 
 
 Para regenerar los paquetes: `python scripts/package-hosting.py`.
 
-La versión optimizada carga `js/app-video-bounded-preview-1.js`. Incluye la dependencia diferida `js/vendor/hls-stream-optimized.js`; sube y extrae el ZIP completo para que también esté disponible. Conserva el video, el reinicio con sonido, el bloqueo de avance/retroceso y el checkout. Tras extraer, abre `/franquiciar-mi-negocio/index.html?player=bounded-preview-1`; si el hosting mantiene una copia del HTML en caché, purga esa caché. Los fuentes y QA completos están en `landing-playbook-v12.0-clean-baseline-SITIO.zip`; el ZIP HOSTING solo necesita los archivos de ejecución.
+La versión optimizada carga `js/app-video-poster-1.js`. Incluye la dependencia diferida `js/vendor/hls-stream-optimized.js`; sube y extrae el ZIP completo para que también esté disponible. Conserva el video, el reinicio con sonido, el bloqueo de avance/retroceso y el checkout. Tras extraer, abre `/franquiciar-mi-negocio/index.html?player=poster-1`; si el hosting mantiene una copia del HTML en caché, purga esa caché. Los fuentes y QA completos están en `landing-playbook-v12.0-clean-baseline-SITIO.zip`; el ZIP HOSTING solo necesita los archivos de ejecución.
 
 Los botones del header y del hero llevan al box de precio (`#oferta`); el checkout directo se conserva en pricing y sticky. El hero muestra «38 páginas de alto valor» y el box de precio indica 38 páginas.
 
 La vista previa nueva repite solo el primer segmento a la menor calidad disponible y reutiliza esos bytes al activar el sonido. Se limita la reproducción posterior a variantes de hasta 480p cuando existen; en ahorro de datos, hasta 360p. Los navegadores sin un motor HLS controlable muestran «Reproducir video» y esperan al clic para descargar el video completo. Es una medida deliberada de ahorro, no un fallo de autoplay.
+
+Durante la carga aparece una portada con la imagen local del ebook; se sustituye por el video al decodificar el primer fotograma. También cubre el reinicio con sonido. Extrae el ZIP completo para actualizar tanto el HTML/JS como los dos archivos CSS del VSL. No se añade tráfico de portada a Bunny.
