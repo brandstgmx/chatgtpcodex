@@ -7,7 +7,7 @@ const originalApp = cp.execFileSync(
   "git",
   [
     "show",
-    "3fe76f4425d1fa631f94091c7d73fe473512ee1e:landing-playbook-v12.0-clean-baseline/js/app.js",
+    "7abb21a2da0ecf021fdbaa51b54917b07d510096:landing-playbook-v12.0-clean-baseline/js/app.js",
   ],
   { cwd: path.resolve(__dirname, "../..") },
 );
@@ -15,7 +15,7 @@ const originalCss = cp.execFileSync(
   "git",
   [
     "show",
-    "3fe76f4425d1fa631f94091c7d73fe473512ee1e:landing-playbook-v12.0-clean-baseline/css/vsl.css",
+    "7abb21a2da0ecf021fdbaa51b54917b07d510096:landing-playbook-v12.0-clean-baseline/css/vsl.css",
   ],
   { cwd: path.resolve(__dirname, "../..") },
 );
@@ -108,7 +108,7 @@ const originalCss = cp.execFileSync(
     await page.locator("[data-video-frame]").scrollIntoViewIfNeeded();
     await page.waitForFunction(() => {
       const v = document.querySelector(".vsl-video");
-      return v && !v.paused && v.currentTime > 2.2 && v.duration > 0;
+      return v && !v.paused && v.currentTime > 1.1 && v.duration > 0;
     });
     await page.locator("[data-video-frame]").scrollIntoViewIfNeeded();
     await page.waitForTimeout(450);
@@ -279,7 +279,7 @@ const originalCss = cp.execFileSync(
       audible.reloads.includes("loadstart") &&
       audible.frames.some((f) => !f.muted && f.time < 0.8) &&
       audible.time < 0.8 &&
-      initial.time > 2.2 &&
+      initial.time > 1.1 &&
       gateHidden &&
       noSeek &&
       layout.height === original.height &&

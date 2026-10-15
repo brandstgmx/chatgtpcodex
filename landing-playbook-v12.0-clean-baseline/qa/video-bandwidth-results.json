@@ -1,0 +1,71 @@
+{
+  "fixture": "45s H264/AAC, 2s segments, local responses; no live Bunny access",
+  "results": [
+    {
+      "mode": "previous",
+      "passed": true,
+      "previewBytes": 1188912,
+      "previewSegmentRequests": 9
+    },
+    {
+      "mode": "bounded",
+      "passed": true,
+      "previewBytes": 159236,
+      "previewSegmentRequests": 1,
+      "loops": 3,
+      "audioRestartUsesCachedFirstSegment": true,
+      "previewDuration": 2.043355,
+      "quality": {
+        "cap": 1,
+        "levels": [
+          360,
+          480,
+          720
+        ],
+        "buffer": 6
+      }
+    },
+    {
+      "mode": "save-data",
+      "passed": true,
+      "previewBytes": 159236,
+      "previewSegmentRequests": 1,
+      "loops": 3,
+      "audioRestartUsesCachedFirstSegment": true,
+      "previewDuration": 2.043355,
+      "quality": {
+        "cap": 0,
+        "levels": [
+          360,
+          480,
+          720
+        ],
+        "buffer": 5
+      }
+    },
+    {
+      "mode": "native-only",
+      "passed": true,
+      "beforeClickBytes": 0
+    },
+    {
+      "mode": "initially-hidden",
+      "passed": true,
+      "previewBytes": 159236,
+      "previewSegmentRequests": 1,
+      "loops": 3,
+      "audioRestartUsesCachedFirstSegment": true,
+      "previewDuration": 2.043355,
+      "quality": {
+        "cap": 1,
+        "levels": [
+          360,
+          480,
+          720
+        ],
+        "buffer": 6
+      }
+    }
+  ],
+  "previewReductionPercent": 86.60657811511702
+}

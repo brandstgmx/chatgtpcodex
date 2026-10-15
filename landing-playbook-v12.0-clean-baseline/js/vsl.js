@@ -1,7 +1,7 @@
 let initialized = false;
 
-// Native HLS browsers never download this library. Other browsers load it only
-// when the video approaches the viewport or the visitor requests playback.
+// Load the controlled HLS engine only when the video is visible or requested.
+// Native-only engines start after a click, since their preview buffer is opaque.
 let hlsModule;
 function getHls() {
   hlsModule ??= import("./vendor/hls-stream-optimized.js").catch((error) => {
@@ -11,6 +11,7 @@ function getHls() {
   return hlsModule;
 }
 import { analytics } from "./shared.js";
+import { createDeliveryCache, deliveryLoaders } from "./vsl-delivery.js";
 
 // Bunny Stream library 780085, video 7b2bbd93-26c7-450f-8c58-3f3c99139b43.
 const BUNNY_HLS_URL =
@@ -23,7 +24,7 @@ export function initVsl() {
   );
   if (!frame) return;
   initialized = true;
-  frame.dataset.vslVersion = "adaptive-loading-1";
+  frame.dataset.vslVersion = "bounded-preview-1";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -89,32 +90,50 @@ export function initVsl() {
   let restoringSeek = false;
   let restartingForAudio = false;
   let sourceGeneration = 0;
+  let fullDuration = 0;
+  let nativeOnly = false;
+  const deliveryCache = createDeliveryCache();
   let sourceRequested = false;
   let nearViewport = false;
+  let activationTimer = 0;
   let resumeWhenVisible = false;
   const connection = navigator.connection;
   const savingData =
     connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "");
 
-  // A short forward buffer limits abandoned downloads; ABR can still choose a
-  // lower rendition on slow connections. Never upscale a small player to 4K.
+  // Keep the silent loop at the lowest rendition. Audible playback adapts below
+  // the bandwidth/size cap rather than silently switching to 1080p/4K.
   function capQuality(engine) {
-    const maxHeight = savingData || !audioEnabled ? 480 : 720;
+    const maxHeight = savingData ? 360 : 480;
     let cap = -1;
     engine.levels.forEach((level, index) => {
-      if (level.height <= maxHeight) cap = index;
+      if (
+        level.height <= maxHeight &&
+        level.bitrate <= (savingData ? 800000 : 1600000)
+      )
+        cap = index;
     });
-    engine.autoLevelCapping = Math.max(0, cap);
+    engine.autoLevelCapping = audioEnabled ? Math.max(0, cap) : 0;
+  }
+
+  function activateWhenVisible() {
+    clearTimeout(activationTimer);
+    if (sourceRequested) return resumePlayback();
+    // Ignore a quick pass through the frame while a CTA scrolls to pricing.
+    activationTimer = setTimeout(() => {
+      if (nearViewport && !document.hidden && !sourceRequested) loadSource();
+    }, 250);
   }
 
   function suspendPlayback() {
+    clearTimeout(activationTimer);
     if (!sourceRequested) return;
     if (!video.paused) {
       resumeWhenVisible = true;
       video.pause();
     }
     hls?.stopLoad();
-    video.preload = "metadata";
+    video.preload = "none";
   }
 
   function resumePlayback() {
@@ -125,7 +144,7 @@ export function initVsl() {
     )
       return;
     resumeWhenVisible = false;
-    video.preload = "auto";
+    video.preload = "none";
     hls?.startLoad(-1);
     startPlayback();
   }
@@ -147,6 +166,11 @@ export function initVsl() {
   video.addEventListener("timeupdate", rememberPlaybackPosition);
   video.addEventListener("pause", rememberPlaybackPosition);
   video.addEventListener("seeking", () => {
+    if (!audioEnabled && video.currentTime < 0.15) {
+      acceptedTime = 0;
+      restoringSeek = false;
+      return;
+    }
     if (
       restartingForAudio ||
       restoringSeek ||
@@ -195,9 +219,10 @@ export function initVsl() {
   }
 
   function updateProgress() {
+    const duration = fullDuration || video.duration;
     const fraction =
-      Number.isFinite(video.duration) && video.duration > 0
-        ? Math.min(1, Math.max(0, video.currentTime / video.duration))
+      Number.isFinite(duration) && duration > 0
+        ? Math.min(1, Math.max(0, video.currentTime / duration))
         : 0;
     fill.style.transform = `scaleX(${fraction})`;
     progress.setAttribute("aria-valuenow", String(Math.round(fraction * 100)));
@@ -224,9 +249,21 @@ export function initVsl() {
     updatePlayback();
   }
 
+  function loadNativeSource() {
+    video.loop = false;
+    if (!audioEnabled) {
+      video.preload = "none";
+      showBlocked();
+      return;
+    }
+    if (!video.canPlayType("application/vnd.apple.mpegurl")) return showError();
+    video.src = BUNNY_HLS_URL;
+    startPlayback();
+  }
+
   async function loadSource(reset = false) {
     sourceRequested = true;
-    video.preload = "auto";
+    video.preload = "none";
     const generation = ++sourceGeneration;
     failed = false;
     hls?.destroy();
@@ -239,41 +276,59 @@ export function initVsl() {
       restoringSeek = false;
       updateProgress();
     }
-    if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = BUNNY_HLS_URL;
-      startPlayback();
-    } else {
-      try {
-        const { default: Hls } = await getHls();
-        if (generation !== sourceGeneration) return;
-        if (!Hls.isSupported()) return showError();
-        const engine = new Hls({
-          enableWorker: true,
-          startPosition: 0,
-          startLevel: 0,
-          capLevelToPlayerSize: true,
-          maxBufferLength: savingData ? 5 : 8,
-          maxMaxBufferLength: savingData ? 8 : 12,
-          maxBufferSize: 4 * 1000 * 1000,
-          backBufferLength: 8,
-        });
-        hls = engine;
-        engine.on(Hls.Events.ERROR, (_event, data) => {
-          if (generation === sourceGeneration && data.fatal) showError();
-        });
-        engine.on(Hls.Events.MANIFEST_PARSED, () => {
-          if (generation !== sourceGeneration) return;
-          capQuality(engine);
-          if (document.hidden || (!nearViewport && !audioEnabled)) {
-            resumeWhenVisible = true;
-            engine.stopLoad();
-          } else startPlayback();
-        });
-        engine.loadSource(BUNNY_HLS_URL);
-        engine.attachMedia(video);
-      } catch {
-        if (generation === sourceGeneration) showError();
+    video.loop = !audioEnabled;
+    // Keep native-only play() in the click's synchronous user activation.
+    if (nativeOnly) {
+      loadNativeSource();
+      return;
+    }
+    try {
+      const { default: Hls } = await getHls();
+      if (generation !== sourceGeneration) return;
+      if (!Hls.isSupported()) {
+        // Older native engines cannot bound a silent preview's download.
+        nativeOnly = true;
+        loadNativeSource();
+        return;
       }
+      const engine = new Hls({
+        enableWorker: true,
+        startPosition: 0,
+        startLevel: 0,
+        capLevelToPlayerSize: true,
+        maxBufferLength: savingData ? 3 : 4,
+        maxMaxBufferLength: savingData ? 5 : 6,
+        maxBufferSize: 2 * 1000 * 1000,
+        // Keep the short preview in the media buffer while it loops.
+        backBufferLength: audioEnabled ? 6 : Infinity,
+        ...deliveryLoaders(Hls, {
+          preview: !audioEnabled,
+          cache: deliveryCache,
+          onDuration: (duration) => {
+            fullDuration = duration;
+          },
+        }),
+      });
+      hls = engine;
+      engine.on(Hls.Events.ERROR, (_event, data) => {
+        if (generation === sourceGeneration && data.fatal) showError();
+      });
+      engine.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (generation !== sourceGeneration) return;
+        capQuality(engine);
+        if (document.hidden || (!nearViewport && !audioEnabled)) {
+          resumeWhenVisible = true;
+          engine.stopLoad();
+        } else startPlayback();
+      });
+      engine.loadSource(BUNNY_HLS_URL);
+      engine.attachMedia(video);
+    } catch {
+      if (generation !== sourceGeneration) return;
+      if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        nativeOnly = true;
+        loadNativeSource();
+      } else showError();
     }
   }
 
@@ -289,6 +344,10 @@ export function initVsl() {
   });
   toggle.addEventListener("click", () => {
     resumeWhenVisible = false;
+    if (nativeOnly && !audioEnabled) {
+      gate.click();
+      return;
+    }
     if (!sourceRequested) loadSource();
     else if (video.paused || video.ended) {
       hls?.startLoad(-1);
@@ -326,7 +385,7 @@ export function initVsl() {
   video.addEventListener("ended", () => {
     updatePlayback();
     updateProgress();
-    if (!complete) {
+    if (audioEnabled && !complete) {
       complete = true;
       analytics.videoComplete();
     }
@@ -347,7 +406,7 @@ export function initVsl() {
   updateProgress();
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) suspendPlayback();
-    else if (nearViewport && !sourceRequested) loadSource();
+    else if (nearViewport && !sourceRequested) activateWhenVisible();
     else resumePlayback();
   });
 
@@ -358,11 +417,10 @@ export function initVsl() {
       ([entry]) => {
         nearViewport = entry.isIntersecting;
         if (nearViewport && !document.hidden) {
-          if (!sourceRequested) loadSource();
-          else resumePlayback();
+          activateWhenVisible();
         } else if (!audioEnabled) suspendPlayback();
       },
-      { rootMargin: "200px 0px", threshold: 0 },
+      { rootMargin: "0px", threshold: 0.15 },
     ).observe(frame);
   } else {
     nearViewport = true;

@@ -1,67 +1,71 @@
-# QA de carga y reproducción del VSL
+# VSL: vista previa acotada, reutilización de bytes y QA
 
-Fecha: 2026-10-15. Referencia previa: commit `3fe76f4425d1fa631f94091c7d73fe473512ee1e`.
+Fecha: 2026-10-15. Referencia anterior: `7abb21a2da0ecf021fdbaa51b54917b07d510096`.
 
-## Peso medido
+## Problema y solución
 
-| Recurso | Antes | Ahora |
+`preload="none"` es una sugerencia y no impide que `play()` o autoplay descarguen medios. La versión anterior prefería HLS nativo: sus límites de calidad/buffer no estaban bajo control de la landing. Además, una vista previa silenciada podía recorrer los 45 segundos y el reinicio de fuente podía volver a pedir los primeros segmentos.
+
+La versión actual usa Hls.js/MSE cuando está soportado. Antes de reproducir, acota las respuestas de playlists de medios al primer segmento por pista y marca ese fragmento como VOD completo para repetirlo localmente. No recorta el archivo del usuario ni modifica el recurso en Bunny. Conserva URL de respuesta, claves, mapas de inicialización y byte-ranges para resolver recursos correctamente.
+
+Una caché de memoria por página, máxima 12 MiB, guarda exclusivamente los segmentos completos descargados por la vista previa. La sesión audible nueva lee esos bytes desde memoria. Se copia cada buffer antes de entregarlo a los workers para que una transferencia no deje la caché vacía. La caché no persiste tras recargar/cerrar, no descarga el video completo, no instala service workers y no requiere cambios en cPanel/Bunny.
+
+La vista previa solicita la menor variante disponible. La sesión con audio permite ABR hasta 480p/1.6 Mbps, o 360p/0.8 Mbps si el navegador declara ahorro de datos/2G. Si Bunny no ofrece una variante que cumpla estos topes, se usa la menor disponible. Para reducir bytes cuando solo existen variantes de alta calidad, hay que habilitar codificaciones menores en Bunny; no se puede inventarlas desde JavaScript.
+
+El motor MSE utiliza un objetivo de buffer de 4 segundos y techo configurado de 6 (3/5 en ahorro). Los segmentos se descargan como unidades y pueden superar esos tiempos; no son topes exactos de bytes. Las pestañas ocultas/pausas detienen nuevas solicitudes. Un 15 % del frame debe estar visible durante 250 ms antes de cargar; no hay precarga fuera de pantalla.
+
+En navegadores sin un motor MSE compatible se muestra «Reproducir video»: HLS nativo espera al clic para descargar. Una vez iniciado, su buffer/calidad sigue siendo administrado por el navegador. Se conserva activación de usuario síncrona al llamar play() en esa ruta. Es una decisión de ahorro deliberada, no una promesa de autoplay universal.
+
+El bundle inicial sigue minificado y la librería HLS diferida. A cambio del control de descargas, también los navegadores que admiten tanto HLS nativo como MSE cargan ahora esa librería cuando el frame es visible.
+
+## Comparación de bytes solicitados
+
+`qa/video-bandwidth.cjs` genera un HLS local H.264/AAC de **45 segundos**, con segmentos de 2 segundos. Intercepta exclusivamente el hostname CDN y sirve archivos locales. Compara la implementación anterior y la actual durante la misma ventana de 7.5 segundos después de comenzar reproducción. La caché HTTP de Playwright está deshabilitada por el routing: la reutilización se comprueba por la caché implementada, no suponiendo headers del CDN.
+
+| Vista previa del fixture | Solicitudes de segmentos | Bytes de segmentos |
 | --- | ---: | ---: |
-| JS inicial, sin compresión | 912 276 B | 28 625 B |
-| JS inicial, gzip calculado localmente | 187 863 B | aproximadamente 10 308 B |
-| Hls.js inicial en navegadores con HLS nativo | Incluido en bundle | 0 B |
-| Hls.js para motores MSE | Incluido en bundle | 367 034 B diferidos; aproximadamente 116 767 B gzip |
+| Implementación anterior | 9 | 1 188 912 |
+| Vista previa acotada | 1 | 159 236 |
 
-Son tamaños de archivos y estimaciones locales de compresión, no mediciones de velocidad del hosting. No se midieron LCP/INP de producción, conversión de compra ni facturación de Bunny. El bundle diferido se solicita desde el hosting, no desde Bunny.
+Reducción en esa prueba controlada: **86.6 %**. No es una medición del consumo real de Bunny ni un porcentaje garantizado por visita. El tamaño de los segmentos, bitrates reales, pistas y comportamiento del visitante cambian el resultado.
 
-## Verificación funcional
+Se comprueban varias vueltas de la vista previa sin más solicitudes de segmentos y el reinicio audible por debajo de 0.8 segundos, con duración completa superior a 44 segundos. La primera URL de segmento no se solicita de nuevo al activar sonido. Se verifica además que la reproducción completa sigue avanzando, la calidad/buffer están configurados, las pestañas ocultas paran solicitudes y una pausa manual se conserva.
 
-Chromium, HLS nativo y Hls.js/MSE forzado por separado: 360×800, 390×844, 430×932, 768×1024, 1024×768, 1366×768, 1440×900 y 1920×1080.
+Casos: comparación anterior, versión nueva, ahorro de datos, fallback nativo sin descarga antes del clic y pestaña inicialmente oculta. Resultados: `qa/video-bandwidth-results.json`.
 
-- Vista previa automática silenciada; clic de audio produce una nueva carga y reproducción con sonido cerca de 00:00 después de más de 2.2 s de vista previa.
-- Play/Pause operativo. Saltos directos hacia delante y atrás rechazados; click y arrastre de la barra no cambian la posición.
-- Capa centrada; controles nativos ausentes; PiP y reproducción remota deshabilitados mediante los atributos soportados.
-- Mismo scrollHeight y geometría del frame que la referencia; altura estable tras 15 intentos de llegar al final. Mismo radio, CSS y contenido fuera del video.
-- Countdown activo, sincronizado entre sus dos instancias, y sticky oculto junto al footer.
-- Sin excepciones JavaScript ni errores de consola en las pruebas con medios locales.
+## Regresión de la landing
 
-Resultados: `qa/video-regression-native-results.json` y `qa/video-regression-mse-results.json`. También se extrajo el ZIP HOSTING y se repitió el caso MSE en 390×844 desde esos archivos, sin sustituir la librería del paquete: aprobado. Se verificaron integridad ZIP, bytes y permisos de todas las entradas.
+`qa/video-regression.cjs`, con Hls.js/MSE: **360×800, 390×844, 430×932, 768×1024, 1024×768, 1366×768, 1440×900 y 1920×1080**.
 
-## Verificación de descargas y ciclo de vida
+- Vista previa silenciada y capa centrada; reinicio con sonido desde cero y nueva carga.
+- Rechazo de seek hacia delante/atrás; click/drag en progreso sin efecto; Play/Pause operativo.
+- Mismos frame, radio, CSS y contenido de las otras secciones que el commit anterior; scrollHeight idéntico y estable tras 15 intentos de llegar al final.
+- Countdown activo y sincronizado; sticky oculto al footer; header/hero conservan destino pricing, 38 páginas y Payhip en compra.
+- Sin excepciones JavaScript ni errores de consola con las respuestas locales.
 
-`qa/video-performance.cjs` genera medios H.264/AAC con FFmpeg y sustituye las respuestas CDN por esos archivos locales. Cubre HLS nativo, MSE, ahorro de datos y página inicialmente oculta.
-
-- Cero solicitudes de video y de Hls.js antes de acercarse al frame en la prueba móvil 390 px.
-- HLS nativo no solicita la librería; MSE la solicita una vez y la reutiliza al reiniciar con sonido.
-- Pestaña inicialmente oculta no descarga medios hasta hacerse visible.
-- Vista previa fuera de la zona de pantalla se pausa; las solicitudes MSE se detienen. Se reanuda al volver.
-- Pausa manual conservada entre cambios de visibilidad.
-- En MSE, topes de calidad comprobados con un manifiesto de prueba que declara 480p/720p/1080p; configuración de buffer comprobada. La prueba valida selección/configuración, no la calidad visual de las variantes reales de Bunny.
-- Pestaña oculta pausa reproducción y detiene las nuevas descargas MSE; al volver, reanuda únicamente la reproducción que estaba activa.
-
-Resultados: `qa/video-performance-results.json`.
+Resultados: `qa/video-bounded-regression-results.json`. También se descomprimió el ZIP HOSTING y se comprobó la reproducción MSE en 390×844 desde sus archivos, más activación nativa mediante la capa y mediante Play. Se verificaron integridad, contenido y permisos 0644/0755 del paquete. Los archivos de resultados con nombres anteriores son evidencia histórica, no la verificación del comportamiento nuevo.
 
 ## Repetir
 
 Desde la raíz del repositorio:
 
 ```sh
-python -m http.server 8781 --bind 127.0.0.1 --directory landing-playbook-v12.0-clean-baseline
+python -m http.server 8783 --bind 127.0.0.1 --directory landing-playbook-v12.0-clean-baseline
 ```
 
-En otra terminal, con dependencias QA instaladas y Chromium/FFmpeg disponibles:
+En otra terminal, con Chromium, FFmpeg y dependencias QA instaladas:
 
 ```sh
 cd landing-playbook-v12.0-clean-baseline/qa
 npm run build:check
-node video-performance.cjs
+APP_URL=http://127.0.0.1:8783/ node video-bandwidth.cjs
 mkdir -p /tmp/vsl-qa-fixture
 ffmpeg -hide_banner -loglevel error -f lavfi -i testsrc2=size=640x360:rate=24 -f lavfi -i sine=frequency=440:sample_rate=44100 -t 18 -c:v libx264 -preset ultrafast -g 48 -pix_fmt yuv420p -c:a aac -f hls -hls_time 2 -hls_playlist_type vod /tmp/vsl-qa-fixture/playlist.m3u8
-node video-regression.cjs
-VSL_FORCE_MSE=1 node video-regression.cjs
+APP_URL=http://127.0.0.1:8783/ VSL_FORCE_MSE=1 QA_OUTPUT_FILE=video-bounded-regression-results.json node video-regression.cjs
 ```
 
-## Límites
+## Límites de verificación
 
-El proxy de salida de este entorno bloquea el CDN de Bunny y el hosting; no se ha verificado aquí la reproducción real, CORS, caché, compresión del servidor ni gasto por visitante. El tráfico de QA se sirve localmente. No se ejecutaron pruebas en Safari/iOS físico. El navegador con HLS nativo controla su propio buffer y calidad; `preload` es una indicación, no un límite estricto de bytes.
+El proxy de salida sigue bloqueando el hostname CDN con `CONNECT tunnel failed, response 403`; ese rechazo no demuestra un error de Bunny. No se verifican aquí bitrates/manifiestos reales, CORS, caché, factura, LCP/INP de producción ni conversiones. La prueba nativa es una ruta forzada en Chromium, no Safari/iOS físico.
 
-El autoplay silenciado y reiniciar con sonido pueden consumir datos antes de que el visitante escuche. Estos comportamientos se conservan por petición del usuario. El ahorro real requiere medir bytes entregados en Bunny con tráfico representativo; no se deduce de dividir las vistas del panel entre el ancho de banda acumulado.
+El ancho de banda del panel es acumulado; el contador de vistas del player no es una medida fiable de todas las solicitudes de un reproductor HLS propio, pruebas, reinicios y recargas. No se calcula costo por visita dividiendo ambos números. Cada recarga borra la caché de memoria; el ahorro persistente entre visitas depende de la caché HTTP del navegador y del CDN.

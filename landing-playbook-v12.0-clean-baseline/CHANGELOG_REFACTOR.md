@@ -148,3 +148,19 @@ Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.
 - Hero: «PDF · 67 páginas» sustituido por «38 páginas de alto valor». El dato del box de precio también se actualiza a 38 páginas para mantener consistencia.
 - Compra en el box y sticky conservan la URL directa de Payhip. No se cambian estilos, reproductor, bundle, timer ni otras secciones.
 - Verificado en 360, 390, 430, 768 y 1440 px: clic real en ambos botones llega a pricing, sin registrar checkout anticipado; copy y enlaces de pago correctos, sin excepciones JavaScript.
+
+## Ahorro efectivo en vista previa y reinicio — 2026-10-15
+
+La optimización anterior no limitaba la precarga de los motores HLS nativos y la vista previa podía descargar los 45 segundos. Este ajuste sustituye esa ruta por una entrega controlada:
+
+- `preload="none"` se conserva en todos los estados. No se usa como supuesto límite de bytes: autoplay/play() puede ignorar esa sugerencia.
+- Al menos 15 % del frame debe estar en pantalla durante 250 ms antes de inicializar la vista previa, para ignorar pasos rápidos al desplazarse al pricing. No hay margen de precarga fuera de pantalla.
+- Hls.js/MSE (o Managed Media Source cuando está soportado) se prefiere a HLS nativo para controlar las solicitudes. La librería sigue diferida y minificada; este control justifica cargarla también en navegadores con HLS nativo que admiten MSE.
+- La vista previa usa un manifiesto VOD acotado al primer segmento de cada pista, conserva claves/mapas/rangos y repite ese fragmento silenciado. No descarga el resto del video sin intención de escucharlo. Su duración depende del corte original de Bunny; no se promete un número exacto de segundos ni un tamaño máximo de segmento.
+- Caché de memoria compartida, máximo 12 MiB, solo para fragmentos de la vista previa. La nueva sesión audible reutiliza los segmentos completos ya descargados, incluso si la caché HTTP no está disponible. Se copian buffers antes de transferirlos a workers; entradas identificadas por URL y byte-range. La caché se libera al cerrar/recargar la página, no almacena el video completo ni instala service workers.
+- Se mantiene la nueva carga desde 00:00 al activar sonido. Preview en la menor variante disponible; audio adaptativo hasta 480p/1.6 Mbps, o 360p/0.8 Mbps si el navegador indica ahorro de datos/2G. Si no hay una variante que cumpla esos topes, se utiliza la menor disponible: la landing no puede crear codificaciones que Bunny no tenga.
+- Buffer MSE objetivo 4 s y techo configurado 6 s (3/5 s en ahorro de datos); las unidades de segmento pueden superar esos valores. Al ocultar la pestaña o pausar se detienen nuevas solicitudes.
+- En navegadores sin MSE compatible, no se inicia una vista previa nativa que pueda descargar el video entero: aparece «Reproducir video» y HLS nativo se inicia solo al pulsar, manteniendo activación de usuario síncrona para play(). Esa ruta administra su propio buffer/calidad una vez iniciada.
+- Progreso referido a la duración completa, aunque la vista previa sea un fragmento. No se registra una finalización de video al repetir la vista previa. Bloqueo de seek, reinicio con sonido, Play/Pause y diseño conservados.
+- Nuevo archivo desplegado `js/app-video-bounded-preview-1.js`. Header/hero mantienen navegación a pricing, 38 páginas y checkout Payhip sin cambios.
+- QA con un HLS local de 45 segundos: vista previa anterior 9 solicitudes de segmentos / 1 188 912 bytes frente a 1 solicitud / 159 236 bytes durante la misma ventana de observación. El segmento se repite sin nuevas solicitudes y se reutiliza al activar sonido. Es una comparación de fixture, no una medición del gasto real en Bunny. Informe en `VIDEO_PERFORMANCE_QA.md`.
