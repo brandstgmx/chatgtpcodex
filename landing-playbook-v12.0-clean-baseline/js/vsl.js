@@ -14,7 +14,7 @@ export function initVsl() {
   );
   if (!frame) return;
   initialized = true;
-  frame.dataset.vslVersion = "locked-1";
+  frame.dataset.vslVersion = "audio-restart-1";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -192,12 +192,16 @@ export function initVsl() {
       loadSource();
       return;
     }
+    video.pause();
+    // This button authorizes a single restart; ordinary seeking stays locked.
+    acceptedTime = 0;
+    video.currentTime = 0;
     video.muted = false;
     video.volume = 1;
     audioEnabled = true;
     gate.hidden = true;
-    // Keep currentTime untouched: unmuting must not restart the video.
-    if (video.paused) startPlayback();
+    updateProgress();
+    startPlayback();
   });
   toggle.addEventListener("click", () => {
     if (video.paused || video.ended) startPlayback();

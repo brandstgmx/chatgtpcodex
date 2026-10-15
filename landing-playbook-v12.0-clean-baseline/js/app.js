@@ -24630,7 +24630,7 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     );
     if (!frame) return;
     initialized10 = true;
-    frame.dataset.vslVersion = "locked-1";
+    frame.dataset.vslVersion = "audio-restart-1";
     const video = document.createElement("video");
     video.className = "vsl-video";
     video.setAttribute(
@@ -24783,11 +24783,15 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
         loadSource();
         return;
       }
+      video.pause();
+      acceptedTime = 0;
+      video.currentTime = 0;
       video.muted = false;
       video.volume = 1;
       audioEnabled = true;
       gate.hidden = true;
-      if (video.paused) startPlayback();
+      updateProgress();
+      startPlayback();
     });
     toggle.addEventListener("click", () => {
       if (video.paused || video.ended) startPlayback();
