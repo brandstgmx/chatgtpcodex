@@ -18,14 +18,25 @@ const root = path.resolve(__dirname, "..");
   });
   const output = Buffer.from(result.outputFiles[0].contents);
   const file = path.join(root, "js/app.js");
+  const script = fs
+    .readFileSync(path.join(root, "index.html"), "utf8")
+    .match(/<script\s+src="(js\/app[^"?]*\.js)(?:\?[^" ]*)?"/);
+  const deployed = script && path.join(root, script[1]);
   if (process.argv.includes("--check")) {
     if (!fs.readFileSync(file).equals(output))
       throw new Error(
         "js/app.js does not match its component sources; run npm run build",
       );
-    console.log("Classic bundle matches its component sources.");
+    if (deployed && !fs.readFileSync(deployed).equals(output))
+      throw new Error(
+        "The bundle loaded by index.html is stale; run npm run build",
+      );
+    console.log(
+      "Classic bundle and deployed file match their component sources.",
+    );
   } else {
     fs.writeFileSync(file, output);
+    if (deployed && deployed !== file) fs.writeFileSync(deployed, output);
     console.log("Built js/app.js:", output.length, "bytes");
   }
 })().catch((error) => {

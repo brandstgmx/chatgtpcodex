@@ -2,6 +2,7 @@
 from pathlib import Path
 import stat
 import tempfile
+import time
 import zipfile
 
 REPO = Path(__file__).resolve().parents[1]
@@ -9,7 +10,7 @@ SITE = REPO / 'landing-playbook-v12.0-clean-baseline'
 
 
 def entry(name, directory=False):
-    info = zipfile.ZipInfo(name + ('/' if directory and not name.endswith('/') else ''))
+    info = zipfile.ZipInfo(name + ('/' if directory and not name.endswith('/') else ''), date_time=time.localtime()[:6])
     info.create_system = 3
     info.compress_type = zipfile.ZIP_DEFLATED
     info.external_attr = ((stat.S_IFDIR | 0o755) if directory else (stat.S_IFREG | 0o644)) << 16

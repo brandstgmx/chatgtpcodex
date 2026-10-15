@@ -14,7 +14,7 @@ export function initVsl() {
   );
   if (!frame) return;
   initialized = true;
-  frame.dataset.vslVersion = "audio-restart-1";
+  frame.dataset.vslVersion = "audio-reset-2";
 
   const video = document.createElement("video");
   video.className = "vsl-video";
@@ -78,11 +78,15 @@ export function initVsl() {
   let resumeAfterPageShow = false;
   let acceptedTime = 0;
   let restoringSeek = false;
+  let restartingForAudio = false;
+  let sourceGeneration = 0;
   const seekTolerance = 0.12;
 
   // Only playback may advance the trusted position, never a seeking event.
   function rememberPlaybackPosition() {
-    if (!video.seeking && !restoringSeek) acceptedTime = video.currentTime;
+    if (!video.seeking && !restoringSeek && !restartingForAudio) {
+      acceptedTime = video.currentTime;
+    }
   }
   if (typeof video.requestVideoFrameCallback === "function") {
     const rememberFrame = () => {
@@ -95,6 +99,7 @@ export function initVsl() {
   video.addEventListener("pause", rememberPlaybackPosition);
   video.addEventListener("seeking", () => {
     if (
+      restartingForAudio ||
       restoringSeek ||
       Math.abs(video.currentTime - acceptedTime) <= seekTolerance
     )
@@ -152,8 +157,11 @@ export function initVsl() {
   function startPlayback() {
     // Explicit replay after completion is allowed; scrubbing during playback is not.
     if (video.ended) acceptedTime = 0;
+    const generation = sourceGeneration;
     const request = video.play();
-    request?.catch(() => {
+    request?.catch((error) => {
+      if (generation !== sourceGeneration || error?.name === "AbortError")
+        return;
       if (!failed) showBlocked();
       updatePlayback();
     });
@@ -167,19 +175,30 @@ export function initVsl() {
     updatePlayback();
   }
 
-  function loadSource() {
+  function loadSource(reset = false) {
+    const generation = ++sourceGeneration;
     failed = false;
     hls?.destroy();
     hls = null;
+    if (reset) {
+      // Drop the previous media pipeline as well as its playback position.
+      video.removeAttribute("src");
+      video.load();
+      acceptedTime = 0;
+      restoringSeek = false;
+      updateProgress();
+    }
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = BUNNY_HLS_URL;
       startPlayback();
     } else if (Hls.isSupported()) {
-      hls = new Hls({ enableWorker: true });
+      hls = new Hls({ enableWorker: true, startPosition: 0 });
       hls.on(Hls.Events.ERROR, (_event, data) => {
-        if (data.fatal) showError();
+        if (generation === sourceGeneration && data.fatal) showError();
       });
-      hls.on(Hls.Events.MANIFEST_PARSED, startPlayback);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (generation === sourceGeneration) startPlayback();
+      });
       hls.loadSource(BUNNY_HLS_URL);
       hls.attachMedia(video);
     } else {
@@ -188,26 +207,25 @@ export function initVsl() {
   }
 
   gate.addEventListener("click", () => {
-    if (failed) {
-      loadSource();
-      return;
-    }
+    restartingForAudio = true;
     video.pause();
-    // This button authorizes a single restart; ordinary seeking stays locked.
-    acceptedTime = 0;
-    video.currentTime = 0;
+    video.defaultMuted = false;
     video.muted = false;
     video.volume = 1;
     audioEnabled = true;
     gate.hidden = true;
-    updateProgress();
-    startPlayback();
+    loadSource(true);
   });
   toggle.addEventListener("click", () => {
     if (video.paused || video.ended) startPlayback();
     else video.pause();
   });
   video.addEventListener("playing", () => {
+    if (video.paused || video.readyState < 2) return;
+    if (restartingForAudio) {
+      restartingForAudio = false;
+      acceptedTime = video.currentTime;
+    }
     updatePlayback();
     if (!audioEnabled) {
       gateTitle.textContent = "El video ya comenzó";

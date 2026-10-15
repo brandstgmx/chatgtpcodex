@@ -24630,7 +24630,7 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     );
     if (!frame) return;
     initialized10 = true;
-    frame.dataset.vslVersion = "audio-restart-1";
+    frame.dataset.vslVersion = "audio-reset-2";
     const video = document.createElement("video");
     video.className = "vsl-video";
     video.setAttribute(
@@ -24688,9 +24688,13 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     let resumeAfterPageShow = false;
     let acceptedTime = 0;
     let restoringSeek = false;
+    let restartingForAudio = false;
+    let sourceGeneration = 0;
     const seekTolerance = 0.12;
     function rememberPlaybackPosition() {
-      if (!video.seeking && !restoringSeek) acceptedTime = video.currentTime;
+      if (!video.seeking && !restoringSeek && !restartingForAudio) {
+        acceptedTime = video.currentTime;
+      }
     }
     if (typeof video.requestVideoFrameCallback === "function") {
       const rememberFrame = () => {
@@ -24702,7 +24706,7 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     video.addEventListener("timeupdate", rememberPlaybackPosition);
     video.addEventListener("pause", rememberPlaybackPosition);
     video.addEventListener("seeking", () => {
-      if (restoringSeek || Math.abs(video.currentTime - acceptedTime) <= seekTolerance)
+      if (restartingForAudio || restoringSeek || Math.abs(video.currentTime - acceptedTime) <= seekTolerance)
         return;
       restoringSeek = true;
       video.currentTime = acceptedTime;
@@ -24746,8 +24750,11 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
     }
     function startPlayback() {
       if (video.ended) acceptedTime = 0;
+      const generation = sourceGeneration;
       const request = video.play();
-      request?.catch(() => {
+      request?.catch((error) => {
+        if (generation !== sourceGeneration || error?.name === "AbortError")
+          return;
         if (!failed) showBlocked();
         updatePlayback();
       });
@@ -24759,19 +24766,29 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
       gate.hidden = false;
       updatePlayback();
     }
-    function loadSource() {
+    function loadSource(reset = false) {
+      const generation = ++sourceGeneration;
       failed = false;
       hls?.destroy();
       hls = null;
+      if (reset) {
+        video.removeAttribute("src");
+        video.load();
+        acceptedTime = 0;
+        restoringSeek = false;
+        updateProgress();
+      }
       if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = BUNNY_HLS_URL;
         startPlayback();
       } else if (Hls.isSupported()) {
-        hls = new Hls({ enableWorker: true });
+        hls = new Hls({ enableWorker: true, startPosition: 0 });
         hls.on(Hls.Events.ERROR, (_event, data) => {
-          if (data.fatal) showError();
+          if (generation === sourceGeneration && data.fatal) showError();
         });
-        hls.on(Hls.Events.MANIFEST_PARSED, startPlayback);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          if (generation === sourceGeneration) startPlayback();
+        });
         hls.loadSource(BUNNY_HLS_URL);
         hls.attachMedia(video);
       } else {
@@ -24779,25 +24796,25 @@ transfer tracks: ${stringify(transferredTracks, (key, value) => key === "initSeg
       }
     }
     gate.addEventListener("click", () => {
-      if (failed) {
-        loadSource();
-        return;
-      }
+      restartingForAudio = true;
       video.pause();
-      acceptedTime = 0;
-      video.currentTime = 0;
+      video.defaultMuted = false;
       video.muted = false;
       video.volume = 1;
       audioEnabled = true;
       gate.hidden = true;
-      updateProgress();
-      startPlayback();
+      loadSource(true);
     });
     toggle.addEventListener("click", () => {
       if (video.paused || video.ended) startPlayback();
       else video.pause();
     });
     video.addEventListener("playing", () => {
+      if (video.paused || video.readyState < 2) return;
+      if (restartingForAudio) {
+        restartingForAudio = false;
+        acceptedTime = video.currentTime;
+      }
       updatePlayback();
       if (!audioEnabled) {
         gateTitle.textContent = "El video ya comenz\xF3";
