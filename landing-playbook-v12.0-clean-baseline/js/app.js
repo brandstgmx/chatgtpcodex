@@ -2,7 +2,7 @@
 (() => {
   // js/shared.js
   var CONFIG = {
-    payhipCheckoutUrl: "",
+    payhipCheckoutUrl: "https://payhip.com/b/KCz65",
     bunnyStreamEmbedUrl: "",
     paymentMethods: [
       "apple-pay",

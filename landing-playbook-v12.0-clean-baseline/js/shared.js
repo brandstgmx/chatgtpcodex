@@ -1,5 +1,5 @@
 export const CONFIG = {
-  payhipCheckoutUrl: "",
+  payhipCheckoutUrl: "https://payhip.com/b/KCz65",
   bunnyStreamEmbedUrl: "",
   paymentMethods: [
     "apple-pay",

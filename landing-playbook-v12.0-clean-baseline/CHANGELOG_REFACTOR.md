@@ -88,3 +88,10 @@ Comprobado: autoplay muted, texto de la capa, audio sin reinicio, Play/Pause, cl
 Límite de verificación: el proxy de este entorno bloquea la conexión tanto a Bunny Player como al hostname CDN con «Tunnel connection failed: 403 Forbidden». Ese rechazo es del proxy de salida, no una respuesta comprobada del servidor de Bunny. Por tanto, la URL del video real quedó configurada pero su reproducción y CORS reales deben comprobarse desde el hosting/navegador del usuario. Tampoco se verificó Safari en un dispositivo físico. No se presenta el HLS local de QA como si fuera el video del usuario.
 
 Entrega: `landing-playbook-v12.0-VIDEO-UPDATE.zip` contiene únicamente css/vsl.css, js/vsl.js, js/app.js, js/vendor/hls.light.mjs, js/vendor/LICENSE.hls.js.txt y este changelog. Extraer dentro de la carpeta existente de la landing, sobrescribiendo esos archivos; no sustituir index.html ni otras secciones. Todos los archivos del parche llevan permisos 0644 y sus carpetas 0755.
+
+## URL de pago Payhip
+
+- Configurada `https://payhip.com/b/KCz65` en los cuatro botones de compra: header, hero, pricing y sticky móvil.
+- Actualizados exclusivamente los cuatro href del HTML y la configuración compartida; bundle regenerado. Los enlaces funcionan también antes de inicializar JavaScript. Sin cambios de diseño, copy, precio ni lógica de video, timer, FAQ o sticky.
+- Verificación en escritorio 1440×900 y móvil 390×844: los cuatro href apuntan al destino exacto. Click en pricing y en sticky navega a esa URL, interceptada localmente para comprobar la navegación sin efectuar compras. Bundle consistente con las fuentes.
+- Parche `landing-playbook-v12.0-PAYHIP-UPDATE.zip`: únicamente index.html, js/shared.js, js/app.js y este changelog. Aplicar sobre la versión actual con el parche de video ya instalado; archivos 0644 y carpetas 0755.
